@@ -1,5 +1,2 @@
-EAPLI 2020 Grupo 1
+EAPLI 2020
 =========
-Modelo de Domínio
--------
-![Modelo de Domínio)](DM.jpg)
