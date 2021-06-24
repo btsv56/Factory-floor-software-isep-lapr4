@@ -1,0 +1,11 @@
+<ProductionLineCatalogue>
+  <!--1 or more repetitions:-->
+  <ProductionLine internalCode="pl1">
+    <Description>pl1</Description>
+    <Machines>
+      <!--2 or more repetitions:-->
+      <Machine ID="mat1"/>
+      <Machine ID="mat2"/>
+    </Machines>
+  </ProductionLine>
+</ProductionLineCatalogue>

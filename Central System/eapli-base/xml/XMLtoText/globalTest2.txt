@@ -1,0 +1,45 @@
+
+        Factory floor:
+        
+        Items:
+                   
+        
+        Raw Material Categories: 2
+        Raw Materials: 4
+        Products: 4
+        Deposits: 3
+        Lots: 1
+        Production Orders: 1
+        Production Lines: 1
+        Production Sheets: 2
+
+        Stock changes:
+        
+        
+        Total consumption: 90
+        Average Consumption: 18
+        
+        Smallest Consumption:
+        
+        Quantity: 10
+        Machine:  mach1
+        Deposit: d2
+        Raw material:
+        product3
+        
+        Biggest Consumption:
+        
+        Quantity: 20
+        Machine:  mach1
+        Deposit: d2
+        Raw material:
+        product3
+
+        Results:
+        
+                
+                Production Order: po1
+                
+                Machine with the highest effective time: mach2
+                Machine with the lowest effective time: mach1
+                Total DownTime: 5:36

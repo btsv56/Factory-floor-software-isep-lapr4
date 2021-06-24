@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence">
+  <persistence-unit name="eapli.base">
+    <!--<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>-->
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <class>eapli.framework.infrastructure.authz.domain.model.SystemUser</class>
+    <class>eapli.framework.infrastructure.authz.domain.model.Role</class>
+    <class>eapli.framework.infrastructure.authz.domain.model.RoleSet</class>
+    <class>eapli.framework.infrastructure.authz.domain.model.RoleAssignment</class>
+    <class>eapli.base.clientusermanagement.domain.ClientUser</class>
+    <class>eapli.base.clientusermanagement.domain.SignupRequest</class>
+    <class>eapli.base.rawmaterialmanagement.domain.RawMaterial</class>
+    <class>eapli.base.rawmaterialmanagement.domain.RawMaterialCategory</class>
+    <class>eapli.base.depositmanagement.domain.Deposit</class>
+    <class>eapli.base.depositmanagement.domain.DepositMaterialSheet</class>
+    <class>eapli.base.depositmanagement.domain.DepositProductSheet</class>
+    <class>eapli.base.factoryfloormanagementarea.domain.Machine</class>
+    <class>eapli.base.productmanagement.domain.Product</class>
+    <class>eapli.base.productionsheetmanagement.domain.ProductionSheet</class>
+    <class>eapli.base.productionsheetmanagement.domain.ProductionSheetLineProduct</class>
+    <class>eapli.base.productionsheetmanagement.domain.ProductionSheetLineRawMaterial</class>
+    <class>eapli.base.productionlinemanagement.domain.ProductionLine</class>
+    <class>eapli.base.productionordermanagement.domain.ProductionOrder</class>
+    <class>eapli.base.factoryfloormanagementarea.domain.ConfigurationFile</class>
+    <class>eapli.base.messagesmanagement.domain.ConsumptionMessage</class>
+    <class>eapli.base.messagesmanagement.domain.EndOfActivityMessage</class>
+    <class>eapli.base.messagesmanagement.domain.ForcedStopMessage</class>
+    <class>eapli.base.messagesmanagement.domain.Message</class>
+    <class>eapli.base.messagesmanagement.domain.OutputDeliveryMessage</class>
+    <class>eapli.base.messagesmanagement.domain.OutputMessage</class>
+    <class>eapli.base.messagesmanagement.domain.ResumptionOfActivityMessage</class>
+    <class>eapli.base.messagesmanagement.domain.ReversalMessage</class>
+    <class>eapli.base.messagesmanagement.domain.StartOfActivityMessage</class>
+    <class>eapli.base.errornotificationmanagement.domain.ErrorNotification</class>
+    <class>eapli.base.productionresultmanagement.domain.FinalProduct</class>
+    <class>eapli.base.productionresultmanagement.domain.ProductionResult</class>
+    <class>eapli.base.productionresultmanagement.domain.ProductionTime</class>
+    <class>eapli.base.productionresultmanagement.domain.StockMovement</class>
+    <properties>
+      <!--<property name="javax.persistence.jdbc.url" value="jdbc:h2:..\..\H2\SmartShopFloorManagment"/>-->
+      <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test"/>
+      <property name="javax.persistence.jdbc.user" value="sa"/>
+      <property name="javax.persistence.jdbc.password" value="eapli"/>
+      <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+      <!-- <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/> -->
+      <!-- <property name="eclipselink.logging.level" value="FINE"/> -->
+      <!-- <property name = "hibernate.show_sql" value = "true" /> -->
+      <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+    </properties>
+  </persistence-unit>
+</persistence>

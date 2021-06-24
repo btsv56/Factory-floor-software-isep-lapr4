@@ -1,0 +1,73 @@
+
+        {
+        "SSFM" : {
+        
+        "Items" : {
+        
+        "Raw Material Categories" : {
+        "value" : 2
+        },
+        "Raw Materials" : {
+        "value" : 4
+        },
+        "Products" : {
+        "value" : 4
+        },
+        "Deposits" : {
+        "value" : 3
+        },
+        "Lots" : {
+        "value" : 1
+        },
+        "Production Orders" : {
+        "value" : 1
+        },
+        "Production Lines" : {
+        "value" : 1
+        }
+    
+        },
+                "StockChanges" : {
+                    
+        "Consumptions" : {
+        
+        "EffectiveConsumptions" : { 
+        "Total consumption" : "90",
+        "Average Consumption" : "18",
+        "SmallestConsumption" : {
+        "Quantity" : "10",
+        "Machine" :  "mach1",
+        
+            "Deposit" : "d2",
+        
+        "Raw material" :
+        
+                "product3"
+            
+        },
+        "BiggestConsumption" : {
+        "Quantity" : "20",
+        "Machine" :  "mach1",
+        
+            "Deposit" : "d2",
+        
+        "Raw material" :
+        
+                "product3"
+            
+        }
+        }
+    
+        }
+    
+                },
+                "Results" : {
+                    "Production Order [po1]" : {
+                        "Machine with the highest effective time" : "mach2",
+                        "Machine with the lowest effective time" : "mach1",
+                        "Total DownTime" : "5:36"
+                    }
+                }
+            }
+        }
+    

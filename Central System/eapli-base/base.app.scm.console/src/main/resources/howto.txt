@@ -1,0 +1,11 @@
+CREATE key (and keystore):
+
+	keytool -genkey -v -alias B -keyalg RSA -keysize 2048 -validity 365 -keystore B.jks –storepass secret
+
+CREATE .pem from .jks:
+
+	keytool -exportcert -alias B -keystore B.jks -storepass secret -rfc -file B.pem
+
+IMPORT machine .pem INTO .jks:
+
+	keytool -import -alias A -keystore B.jks -file A.pem -storepass secret

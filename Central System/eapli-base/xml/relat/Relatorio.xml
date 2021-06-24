@@ -1,0 +1,786 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<ns1:relatório xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:ns1='http://www.dei.isep.ipp.pt/lprog' xsi:schemaLocation='http://www.dei.isep.ipp.pt/lprog Relatorio.xsd' id="ret">
+    <ns1:páginaRosto>
+        <ns1:tema>Smart Shop Floor Management</ns1:tema>
+        <ns1:disciplina id="d1">
+            <ns1:designação>Linguagens e Programação</ns1:designação>
+            <ns1:anoCurricular>2</ns1:anoCurricular>
+            <ns1:sigla>LPROG</ns1:sigla>
+        </ns1:disciplina>
+        <ns1:autor>
+            <ns1:nome>Bruno Veiga</ns1:nome>
+            <ns1:número>1180712</ns1:número>
+            <ns1:mail>1180712@isep.ipp.pt</ns1:mail>
+        </ns1:autor>
+        <ns1:autor>
+            <ns1:nome>João Leal</ns1:nome>
+            <ns1:número>1180723</ns1:número>
+            <ns1:mail>1180723@isep.ipp.pt</ns1:mail>
+        </ns1:autor>
+        <ns1:autor>
+            <ns1:nome>Pedro Brandão</ns1:nome>
+            <ns1:número>1180715</ns1:número>
+            <ns1:mail>1180715@isep.ipp.pt</ns1:mail>
+        </ns1:autor>
+        <ns1:autor>
+            <ns1:nome>Bruno Ribeiro</ns1:nome>
+            <ns1:número>1180573</ns1:número>
+            <ns1:mail>1180573@isep.ipp.pt</ns1:mail>
+        </ns1:autor>
+        <ns1:turma>2DB</ns1:turma>
+        <ns1:professor sigla="AMD" tipoAula="T">Ana Madureira</ns1:professor>
+        <ns1:professor sigla="ASS" tipoAula="TP">Antonio Silva</ns1:professor>
+        <ns1:professor sigla="JSM" tipoAula="PL">José Marinho</ns1:professor>
+        <ns1:logotipoDEI>data:image/png;base64,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</ns1:logotipoDEI>
+        <ns1:data>2020-06-14</ns1:data>
+    </ns1:páginaRosto>
+    <ns1:corpo id="corpo">
+        <ns1:introdução tituloSecção="Introdução" id="SEC001">
+            <ns1:parágrafo>
+                O presente relatório serve para dar a conhecer as funcionalidades desenvolvidas durante a implementação
+                deste sistema.
+                Foi nos proposto desenvolver uma aplicação capaz de recolher a diversidade de
+                dados/mensagens geradas pelas diferentes máquinas/equipamentos que constituem o "chão de
+                fábrica" de uma unidade industrial e, por outro lado, realizar o processamento desses dados de forma
+                a satisfazer diversas necessidades, tais como:
+            </ns1:parágrafo>
+            <ns1:listaItems>
+                <ns1:item>controlo das ordens de produção e respetiva execução</ns1:item>
+                <ns1:item>a gestão de tempo de atividade e paragem de máquinas</ns1:item>
+                <ns1:item>a gestão de consumos de matérias-primas</ns1:item>
+                <ns1:item>registo de quantidades efetivamente produzidas</ns1:item>
+            </ns1:listaItems>
+            <ns1:parágrafo>
+                Por fim, este sistema deve ainda ser capaz de disponibilizar informação relevante a outros sistemas
+                externos existentes na empresa, bem como ser capaz de integrar informação útil existente nesses
+                mesmos sistema.
+                <ns1:sublinhado>Este relatório irá analisar não só o domínio de negócio mas também a construção dos documentos xml, xsd e as transformações xsl.</ns1:sublinhado>
+            </ns1:parágrafo>
+        </ns1:introdução>
+        <ns1:outrasSecções>
+            <ns1:análise tituloSecção="Análise" id="SEC002">
+                <ns1:parágrafo>
+                    A empresa
+                    <ns1:itálico>Smart Shop Floor Management</ns1:itálico>
+                    <ns1:negrito>(SSFM)</ns1:negrito>
+                    é especializada na área de gestão e controlo de
+                    produção realizada em unidades industriais dedicadas a distintas áreas de negócio (e.g. cortiças,
+                    calçado, cutelaria). Está preparada para gerir stocks, produtos e materiais.
+                    Oferece, ainda a possibilidade de gerar ordens de produção para determinadas
+                    linhas de produção. Oferece também capacidade de comunicação UDP e TCP (seguras nesta última) entre
+                    as diversas máquinas pertencentes ao negócio.
+                    Possui também monitorização do estado das máquinas através do Sistema de Monitorização de Máquinas. Esta é
+                    conseguida através da comunicação entre as máquinas e este sistema, através do protocolo de comunicação UDP.
+                </ns1:parágrafo>
+            </ns1:análise>
+            <ns1:linguagem tituloSecção="Linguagem" id="SEC003">
+                <ns1:parágrafo>
+                    Neste projeto foi nos proposto fazer um documento
+                    <ns1:negrito>XSD</ns1:negrito>
+                    que validasse os elementos exportados através da aplicação desenvolvida.
+                    Após analisarmos bem o problema e criarmos a devida solução surgiram certas entidades representativas deste negócio tais como
+                    A Linha de producao, máquinas, productos, depositos, ordens de produção... assim como alguns conceitos também relevantes referentes aos resultados das 
+                    ordens de producao: os consumos, os tempos efetivos, os tempos de pausa, perdas... 
+                    E foram  através destas entidades que nos baseamos para produzir o respetivo documento
+                    <ns1:negrito>XSD</ns1:negrito>
+                    .
+                </ns1:parágrafo>
+                <ns1:parágrafo>
+                    O nosso documento XSD está dividida em 3 secções:
+                </ns1:parágrafo>
+
+                <ns1:listaItems>
+                    <ns1:item>Secção da Raiz</ns1:item>
+                    <ns1:item>Secção dos Elementos</ns1:item>
+                    <ns1:item>Secção das Chaves</ns1:item>
+                </ns1:listaItems>
+
+                <ns1:subsecção id="SUBSEC001">Raiz</ns1:subsecção>
+                <ns1:parágrafo>
+                    Apesar de no documento
+                    <ns1:negrito>XSD</ns1:negrito>
+                    estar de uma ordem diferente, comeceremos por explicar como a secção da Raiz foi estruturada.
+                    Primeiramente o documento
+                    <ns1:negrito>XML</ns1:negrito>
+                    tem de ser constituido por um único elemento raiz que tem como nome o acrónimo da empresa (
+                    <ns1:negrito>SSFM</ns1:negrito>
+                    )
+                    que vai conter todos os outros elementos.
+                </ns1:parágrafo>
+                <ns1:codigo>
+                    <ns1:bloco>
+                        <![CDATA[
+                            <xsd:element name="SSFM" type="TSSFM">
+                                ...
+                            </xsd:element>
+                        ]]>
+                    </ns1:bloco>
+                </ns1:codigo>
+                <ns1:parágrafo>
+                    Este elemento raiz e do tipo complexo e permite ter um ou mais elementos, sem uma ordem específica, definidos no elemento choice.
+                    Isto inclui todos os elementos que podem ser exportados atraves do sistema.
+                </ns1:parágrafo>
+                <ns1:codigo>
+                    <ns1:bloco>
+                        <![CDATA[
+                            <!-- General -->
+                            <xsd:complexType name="TSSFM">
+                                <xsd:choice minOccurs="0" maxOccurs="unbounded">
+                                    <xsd:element name="RawMaterialCategories" type="TRawMaterialCategories"/>
+                                    <xsd:element name="RawMaterials" type="TRawMaterials"/>
+                                    <xsd:element name="Products" type="TProducts"/>
+                                    <xsd:element name="Deposits" type="TDeposits"/>
+                                    <xsd:element name="ProductionSheets" type="ProductionSheets"/>
+                                    <xsd:element name="Lots" type="TLots"/>
+                                    <xsd:element name="ProductionOrders" type="TProductionOrders"/>
+                                    <xsd:element name="ProductionLines" type="TProductionLines"/>
+                                    <xsd:element name="Consumptions" type="TConsumptions"/>
+                                    <xsd:element name="Wastes" type="TWastes"/>
+                                    <xsd:element name="Machines" type="TMachines"/>
+                                    <xsd:element name="EffectiveTimes" type="TEffectiveTimes"/>
+                                    <xsd:element name="BruteTimes" type="TBruteTimes"   />
+                                </xsd:choice>
+                            </xsd:complexType>
+                        ]]>
+                    </ns1:bloco>
+                </ns1:codigo>
+                <ns1:parágrafo>
+                    Cada elemento tem um tipo complexo associado que será falado com mais detalhe na
+                    <ns1:negrito>Secção dos Elementos</ns1:negrito>
+                    .
+                </ns1:parágrafo>
+
+
+                <ns1:subsecção id="SUBSEC002">Elementos</ns1:subsecção>
+                <ns1:parágrafo>
+                    Nesta secção é onde se encontram defenidos todos os elementos do negócio assim como elementos simples usados para complementar
+                    os complexos. 
+                </ns1:parágrafo>
+                <ns1:parágrafo>
+                    Os complexos vão desde elementos com apenas astributos:
+                </ns1:parágrafo>
+                <ns1:codigo>
+                    <ns1:bloco>
+                        <![CDATA[
+                            <xsd:complexType name="TMachineID">
+                                <xsd:attribute name="InternalCode" type="xsd:string" use="required" />
+                            </xsd:complexType>
+                        ]]>
+                    </ns1:bloco>
+                </ns1:codigo>
+                <ns1:parágrafo>Elementos com apenas outros elementos (Simples ou Complexos) na sua composição:</ns1:parágrafo>
+                <ns1:codigo>
+                    <ns1:bloco>
+                        <![CDATA[
+                            <xsd:complexType name="TEffectiveConsumptions">
+                                <xsd:sequence>
+                                    <xsd:element name="Consumption" type="TEffectiveConsumption" maxOccurs="unbounded" />
+                                </xsd:sequence>
+                            </xsd:complexType>
+                            ... 
+                            <xsd:complexType name="TTechnicalSheet">
+                                <xsd:sequence>
+                                    <xsd:element name="nameTechnicalSheet" type="xsd:string" />
+                                </xsd:sequence>
+                            </xsd:complexType>
+                        ]]>
+                    </ns1:bloco>
+                </ns1:codigo>
+                <ns1:parágrafo>Elementos com atributos e elementos na sua composição:</ns1:parágrafo>
+                <ns1:codigo>
+                    <ns1:bloco>
+                        <![CDATA[
+                            <xsd:complexType name="TMachine">
+                                <xsd:sequence>
+                                    <xsd:element name="SerialNumber" type="TSerialNumber" />
+                                    <xsd:element name="Description" type="TDescription" />
+                                    <xsd:element name="InstallationDate" type="TDate" />
+                                    <xsd:element name="Brand" type="TBrand" />
+                                    <xsd:element name="Model" type="TModel" />
+                                    <xsd:element name="Protocol" type="TProtocol" minOccurs="0" />
+                                    <xsd:element name="Machine" type="TMachineID" minOccurs="0" />
+                                    <xsd:element name="ConfigurationFiles" type="TConfigurationFiles" minOccurs="0" />
+                                </xsd:sequence>
+                                <xsd:attribute name="InternalCode" type="TInternalCode" use="required" />
+                                <xsd:attribute name="State" type="TMachineState" use="required" />
+                            </xsd:complexType>
+                        ]]>
+                    </ns1:bloco>
+                </ns1:codigo>
+                <ns1:parágrafo>E elementos com texto e atributos na sua composição:</ns1:parágrafo>
+                <ns1:codigo>
+                    <ns1:bloco>
+                        <![CDATA[
+                            <xsd:complexType name="TConfigurationFile">
+                                <xsd:simpleContent>
+                                    <xsd:extension base="xsd:string">
+                                        <xsd:attribute name="File" type="TFile" />
+                                    </xsd:extension>
+                                </xsd:simpleContent>
+                            </xsd:complexType>
+                        ]]>
+                    </ns1:bloco>
+                </ns1:codigo>
+
+                <ns1:subsecção id="SUBSEC003">Chaves</ns1:subsecção>
+                <ns1:parágrafo>
+                    E por utlimo temos a secção das chaves. As chaves são usadas para fazer as devidas correspondências que existem no negócio,
+                    como por exemplo as perdas (Wastes) têm de fazer referência a várias entidades(ex.: Ordem de produção, Máquina...). 
+                    Para que isto seja possível é preciso criar 
+                    <ns1:itálico>keys</ns1:itálico>
+                    para identificar elementos que vão ser usados como referências, e os <ns1:itálico>keyref</ns1:itálico> que vão ser usados para referir as <ns1:itálico>keys</ns1:itálico>.
+                </ns1:parágrafo>
+
+                <ns1:parágrafo> A <ns1:itálico>key</ns1:itálico> da ordem de produção:</ns1:parágrafo>
+                <ns1:codigo>
+                    <ns1:bloco>
+                        <![CDATA[
+                            <!-- Production Order -->
+                            <xsd:key name="ProductionOrderKey">
+                                <xsd:selector xpath="ProductionOrders/ProductionOrder" />
+                                <xsd:field xpath="@internalCode" />
+                            </xsd:key>
+                        ]]>
+                    </ns1:bloco>
+                </ns1:codigo>
+                <ns1:parágrafo>Referência da ordem de produção no elemento das perdas (Wastes):</ns1:parágrafo>
+                <ns1:codigo>
+                    <ns1:bloco>
+                        <![CDATA[
+                            <!-- Wastes -->
+                            <xsd:keyref name="WastesProductionOrderRefKey" refer="ProductionOrderKey">
+                                <xsd:selector xpath="Wastes/Waste/ProductionOrder" />
+                                <xsd:field xpath="@ID" />
+                            </xsd:keyref>
+                        ]]>
+                    </ns1:bloco>
+                </ns1:codigo>
+                <ns1:parágrafo>O xml definido com base no schema explicado anteriormente pode ser encontrado nos anexos.</ns1:parágrafo>    
+
+            </ns1:linguagem>
+
+            <ns1:transformações tituloSecção="Transformações" id="SEC004">
+                <ns1:parágrafo>
+                    O XML pode ser transformado em outros tipos, nomeadamente:
+                </ns1:parágrafo>
+                <ns1:listaItems>
+                    <ns1:item>HTML</ns1:item>
+                    <ns1:item>JSON</ns1:item>
+                    <ns1:item>Texto</ns1:item>
+                    <ns1:item>XML</ns1:item>
+                </ns1:listaItems>
+
+                <ns1:parágrafo>
+                    Estes tipos, estão subdivididos em 3 partes (à exceção do Texto que só possui 2). Uma possui uma formatação típica a cada uma das linguagens. A segunda, oferece uma formatação diferente,
+                    e a terceira apresenta novas informações, tais como o número de elementos no ficheiro XML, os consumos efetuados, e os elementos mais usados,
+                    menos usados, o consumo total e a média.
+                </ns1:parágrafo>
+
+                <ns1:subsecção id="SUBSEC004">HTML</ns1:subsecção>
+                <ns1:parágrafo>A transformação para HTML, oferece a possibilidade de transformar o ficheiro XML, num ficheiro com formatação
+                    HTML para que seja possível ler em browsers ou outros editores.
+                    Para além disso, são fornecidos três formatos. Um deles, possui uma formatação normal de HTML, onde a informação é apresentada em tabelas
+                    que possuem as informações necessárias, como por exemplo ID do produto, a quantidade, o ID da ficha de produção, entre outros.
+                    O segundo formato, apresenta a mesma informação que este ultimo, mas, ao invés de utilizar tabelas, são usados parágrafos e headers para organizar a informação.
+                    O terceiro formato, apresenta a informação sobre as quantidades que existem sobre aquele determinado elemento, dá informações sobre os consumos: o maior, menor,
+                    a média e o consumo total.
+                </ns1:parágrafo>
+                <ns1:codigo>
+                    <ns1:bloco>
+                        Exemplo de código de transformação para HTML de consumos, incluindo maximos, minimos, médias e totais
+                        <![CDATA[
+                        <xsl:template match="Consumptions">
+                        <xsl:apply-templates select="EffectiveConsumptions"/>
+                        </xsl:template>
+                        <xsl:template match="EffectiveConsumptions">
+                        <p>
+                        Total consumption: <xsl:value-of select="sum(Consumption/quantity)"/>
+                                <br/>
+                                Average Consumption: <xsl:value-of select="avg(Consumption/quantity)"/>
+                                <h3>Smallest Consumption</h3>
+                                <xsl:variable name="min">
+                                    <xsl:value-of select="min(Consumption/quantity)"/>
+                                </xsl:variable>
+                                <xsl:variable name="material">
+                                    <xsl:value-of select="(Consumption/@rawMaterial[$min=(../quantity)])[1]"/>
+                                </xsl:variable>
+                                <xsl:variable name="materialMax">
+                                    <xsl:value-of select="(Consumption/@rawMaterial[$min=(../quantity)])[1]"/>
+                                </xsl:variable>
+                                <ul>
+                                    <li>
+                                        Quantity: <xsl:value-of select="min(Consumption/quantity)"/>
+                                    </li>
+                                    <li>
+                                        Machine:  <xsl:value-of select="(Consumption/@machine[$min=(../quantity)])[1]"/>
+                                    </li>
+                                    <li>
+                                        <xsl:if test="Consumption/@deposit">
+                                            Deposit: <xsl:value-of select="(Consumption/@deposit[$min=(../quantity)])[1]"/>
+                                        </xsl:if>
+                                    </li>
+                                    <li>
+                                        Raw material:
+                                        <xsl:choose>
+                                            <xsl:when test="$material!=''">
+                                                <xsl:value-of select="$material"/>
+                                            </xsl:when>
+                                            <xsl:when test="$material=''">
+                                                <xsl:value-of select="(Consumption/@product[$min=(../quantity)])[1]"/>
+                                            </xsl:when>
+                                        </xsl:choose>
+                                    </li>
+                                </ul>
+                                <h3>Biggest Consumption</h3>
+                                <xsl:variable name="max">
+                                    <xsl:value-of select="min(Consumption/quantity)"/>
+                                </xsl:variable>
+                                <ul>
+                                    <li>
+                                        Quantity: <xsl:value-of select="max(Consumption/quantity)"/>
+                                    </li>
+                                    <li>
+                                        Machine:  <xsl:value-of select="(Consumption/@machine[$max=(../quantity)])[1]"/>
+                                    </li>
+                                    <li>
+                                        <xsl:if test="Consumption/@deposit">
+                                            Deposit: <xsl:value-of select="(Consumption/@deposit[$max=(../quantity)])[1]"/>
+                                        </xsl:if>
+                                    </li>
+                                    <li>
+                                        Raw material:
+                                        <xsl:choose>
+                                            <xsl:when test="$material!=''">
+                                                <xsl:value-of select="$material"/>
+                                            </xsl:when>
+                                            <xsl:when test="$material=''">
+                                                <xsl:value-of select="(Consumption/@product[$max=(../quantity)])[1]"/>
+                                            </xsl:when>
+                                        </xsl:choose>
+                                    </li>
+                                </ul>
+                            </p>
+                        </xsl:template>
+                        ]]>
+                    </ns1:bloco>
+                </ns1:codigo>
+
+                <ns1:subsecção id="SUBSEC005">JSON</ns1:subsecção>
+                <ns1:parágrafo>
+                    A transformação para JSON possui também três formatos, nas mesmas medidas que o formato anterior. O primeiro e 
+                    o segundo formato apresentam a informação presente na aplicação, enquanto que o terceiro apresenta a informação tratada, com
+                    indicação de quantidades e movimentos de stock.
+                    <ns1:citação>RefW_bizcoder</ns1:citação>
+                    <ns1:citação>RefB_BeginningJson</ns1:citação>
+                </ns1:parágrafo>
+                <ns1:codigo>
+                    <ns1:bloco>
+                        Template Principal de JSON
+                        <![CDATA[
+                        <xsl:template match="/SSFM">
+                            {
+                            "SSFM" : {
+                            <xsl:apply-templates select="RawMaterialCategories"/>
+                            <xsl:apply-templates select="RawMaterials"/>
+                            <xsl:apply-templates select="Products"/>
+                            <xsl:apply-templates select="Deposits"/>
+                            <xsl:apply-templates select="ProductionSheets"/>
+                            <xsl:apply-templates select="Lots"/>
+                            <xsl:apply-templates select="ProductionOrders"/>
+                            <xsl:apply-templates select="ProductionLines"/>
+                            }
+                            }
+                        </xsl:template>
+                        ]]>
+
+
+                        Exemplo de Transformação
+                        <![CDATA[
+                        <xsl:template match="Deposits">
+                            "Deposits" : { "Deposit" :[
+                            <xsl:apply-templates select="Deposit"/>
+                            ]}<xsl:if test="following-sibling::*">,</xsl:if>
+                        </xsl:template>
+
+                        <xsl:template match="Deposit">
+                            {
+                            "internalCode" : "<xsl:value-of select="@internalCode"/>",
+                            "Description" : "<xsl:value-of select="Description"/>",
+                            <xsl:for-each select="RawMaterials/RawMaterial">
+                                "rawMaterialID<xsl:value-of select="position()"/>" : "<xsl:value-of select="@ID"/>",
+                                "RMQuantity<xsl:value-of select="position()"/>" : "<xsl:value-of select="@Quantity"/>"
+                                <xsl:if test="following-sibling::*">,</xsl:if>
+                            </xsl:for-each>
+                            <xsl:for-each select="Products/Product">
+                                "productID<xsl:value-of select="position()"/>" : "<xsl:value-of select="@ID"/>",
+                                "PQuantity<xsl:value-of select="position()"/>" : "<xsl:value-of select="@Quantity"/>"
+                                <xsl:if test="following-sibling::*">,</xsl:if>
+                            </xsl:for-each>}
+                            <xsl:if test="following-sibling::*">,</xsl:if>
+                        </xsl:template>
+                        ]]>
+                    </ns1:bloco>
+                </ns1:codigo>
+
+                <ns1:subsecção id="SUBSEC006">Texto</ns1:subsecção>
+                <ns1:parágrafo>A transformação para Texto possui dois formatos. Um com uma formatação normal, e outro com os consumos e quantidades de cada elemento presente no XML  </ns1:parágrafo>
+                <ns1:codigo>
+                    <ns1:bloco>
+                        Template principal de texto
+                        <![CDATA[
+                            <xsl:template match="/SSFM"> 
+                                <xsl:apply-templates select="RawMaterialCategories"/> 
+                                <xsl:apply-templates select="RawMaterials"/> 
+                                <xsl:apply-templates select="Products"/> 
+                                <xsl:apply-templates select="Deposits"/> 
+                                <xsl:apply-templates select="ProductionSheets"/> 
+                                <xsl:apply-templates select="Lots"/> 
+                                <xsl:apply-templates select="ProductionOrders"/> 
+                                <xsl:apply-templates select="ProductionLines"/> 
+                                <xsl:apply-templates select="Consumptions"/> 
+                            </xsl:template> 
+                        ]]>
+
+
+                        Exemplo de Transformação de Consumos Reais
+                        <![CDATA[
+                        <xsl:template match="RealConsumptions">
+                            RealConsumptions:<xsl:apply-templates select="Deposit"/>
+                            <xsl:apply-templates select="RawMaterial"/>
+                            <xsl:apply-templates select="Product"/>
+                        </xsl:template>
+
+                        <xsl:template match="//RealConsumptions/Deposit">
+
+                            Deposit :<xsl:value-of select="@id"/>
+                            Quantity: <xsl:value-of select="quantity"/>
+                        </xsl:template>
+
+                        <xsl:template match="//RealConsumptions/RawMaterial">
+
+                            RawMaterial: <xsl:value-of select="@id"/>"
+                            Quantity: <xsl:value-of select="quantity"/>"
+                        </xsl:template>
+
+                        <xsl:template match="//RealConsumptions/Product">
+
+                            Product: <xsl:value-of select="@id"/>"
+                            Quantity: <xsl:value-of select="quantity"/>"
+                        </xsl:template>
+                        ]]>
+                    </ns1:bloco>
+                </ns1:codigo>
+
+                <ns1:subsecção id="SUBSEC007">XML</ns1:subsecção>
+                <ns1:parágrafo>A transformação para XML, oferece a possibilidade de colocar o XML num formato diferente. No nosso caso, cada elemento foi colocado com mais atributos.
+                    ao contrário de novos elementos-filho.
+                </ns1:parágrafo>
+                <ns1:figura src="figuras/xmltoxml.png" descrição="exemplo de xsl" />
+
+            </ns1:transformações>
+        </ns1:outrasSecções>
+        <ns1:conclusão tituloSecção="Conclusão" id="SEC005">
+            <ns1:parágrafo>
+                Esta iteração da aplicação é capaz de satisfazer todas as exigências do cliente e as suas funcionalidades são fáceis de entender e simples de usar. Como tal, 
+                achamos que a aplicação está pronta para ser usada para os fins requeridos do cliente. Para além das funcionalidades da aplicação, os documentos xml e xsd e as transformações xsl
+                encontram-se igualmente num estado completo, capaz de ser usufruido pelo cliente. A comunicação entre a aplicação e maquinaria também foi extensivamente testada
+                de forma a ser intuitiva, eficiente e robusta, tal como a interação com a base de dados através da aplicação. Nestes dois últimos aspetos foi tomado em conta o facto que 
+                pode haver várias instâncias do nosso programa a correr simultâneamente. No estado em que se encontra a aplicação, isso não será problema. A documentação da estrutura e
+                funcionamento do nosso programa é bastante extensiva e detalhada, pelo que não deve haver desentendimento sobre o funcionamento da aplicação.
+            </ns1:parágrafo>
+        </ns1:conclusão>
+        <ns1:referências tituloSecção="Referências" id="SEC007">
+            <ns1:refBibliográfica idRef="RefB_BeginningJson">
+                <ns1:título>Beginning JSON</ns1:título>
+                <ns1:dataPublicação>2015</ns1:dataPublicação>
+                <ns1:autor>Ben Smith</ns1:autor>
+            </ns1:refBibliográfica>
+            <ns1:refWeb idRef="RefW_w3schools">
+                <ns1:URL>https://www.w3schools.com/</ns1:URL>
+                <ns1:descrição>THE WORLD'S LARGEST WEB DEVELOPER SITE</ns1:descrição>
+                <ns1:consultadoEm>2020-06-12</ns1:consultadoEm>
+            </ns1:refWeb>
+            <ns1:refWeb idRef="RefW_bizcoder">
+                <ns1:URL>http://www.bizcoder.com/convert-xml-to-json-using-xslt?fbclid=IwAR36KvzJg4dWhG1EeofxfA5CcL5APF5oBwe8zp-Oi7ydTvl035asVg6RE5o</ns1:URL>
+                <ns1:descrição>Convert XML to JSON using XSLT</ns1:descrição>
+                <ns1:consultadoEm>2020-06-05</ns1:consultadoEm>
+            </ns1:refWeb>
+        </ns1:referências>
+    </ns1:corpo>
+    <ns1:anexos tituloSecção="Anexo1 - XML criado" id="ANX001">
+        <ns1:codigo>
+            <ns1:bloco>
+                <![CDATA[
+                <SSFM xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="global.xsd">
+
+                    <RawMaterialCategories>
+                        <RawMaterialCategory name="cat1">
+                            <description>Wood</description>
+                        </RawMaterialCategory>
+                        <RawMaterialCategory name="cat2">
+                            <description>Metal</description>
+                        </RawMaterialCategory>
+                    </RawMaterialCategories>
+
+                    <RawMaterials>
+                        <RawMaterial internalCode="rm1" nameRawMaterialCategory="cat1">
+                            <description>softwood</description>
+                            <TechnicalSheet>
+                                <nameTechnicalSheet>softwood.pdf</nameTechnicalSheet>
+                            </TechnicalSheet>
+                        </RawMaterial>
+                        <RawMaterial internalCode="rm2" nameRawMaterialCategory="cat1">
+                            <description>softwood</description>
+                            <TechnicalSheet>
+                                <nameTechnicalSheet>softwood.pdf</nameTechnicalSheet>
+                            </TechnicalSheet>
+                        </RawMaterial>
+                        <RawMaterial internalCode="rm3" nameRawMaterialCategory="cat2">
+                            <description>iron</description>
+                            <TechnicalSheet>
+                                <nameTechnicalSheet>iron.pdf</nameTechnicalSheet>
+                            </TechnicalSheet>
+                        </RawMaterial>
+                        <RawMaterial internalCode="rm4" nameRawMaterialCategory="cat2">
+                            <description>steel</description>
+                            <TechnicalSheet>
+                                <nameTechnicalSheet>steel.pdf</nameTechnicalSheet>
+                            </TechnicalSheet>
+                        </RawMaterial>
+                    </RawMaterials>
+
+                    <Products>
+                        <Product fabricationCode="product1">
+                            <comercialCode>cc23321</comercialCode>
+                            <briefDescription>Iron Pickaxe</briefDescription>
+                            <completeDescription>Iron Pickaxe for Mining</completeDescription>
+                            <productCategory>Tools</productCategory>
+                            <unity>UN</unity>
+                            <productionSheet>ps3221</productionSheet>
+                        </Product>
+                        <Product fabricationCode="product4">
+                            <comercialCode>cc23321</comercialCode>
+                            <briefDescription>Iron Picaxe</briefDescription>
+                            <completeDescription>Iron Picaxe for Mining</completeDescription>
+                            <productCategory>Tools</productCategory>
+                            <unity>UN</unity>
+                            <productionSheet>ps3221</productionSheet>
+                        </Product>
+                        <Product fabricationCode="product2">
+                            <comercialCode>cc23321</comercialCode>
+                            <briefDescription>Iron Pickaxe</briefDescription>
+                            <completeDescription>Iron Pickaxe for Mining</completeDescription>
+                            <productCategory>Tools</productCategory>
+                            <unity>UN</unity>
+                            <productionSheet>ps3221</productionSheet>
+                        </Product>
+                        <Product fabricationCode="product3">
+                            <comercialCode>cc23111</comercialCode>
+                            <briefDescription>Coffee Maker</briefDescription>
+                            <completeDescription>Ideal For making coffee</completeDescription>
+                            <productCategory>Beverages</productCategory>
+                            <unity>UN</unity>
+                            <productionSheet>ps3222</productionSheet>
+                        </Product>
+                    </Products>
+
+                    <Deposits>
+                        <Deposit internalCode="d1">
+                            <Description>d1</Description>
+                            <Products>
+                                <Product ID="d" Quantity="2" />
+                            </Products>
+                        </Deposit>
+
+                        <Deposit internalCode="d2">
+                            <Description>d2</Description>
+                            <RawMaterials>
+                                <RawMaterial ID="rm2" Quantity="2" />
+                            </RawMaterials>
+                        </Deposit>
+
+                        <Deposit internalCode="d3">
+                            <Description>d3</Description>
+                            <RawMaterials>
+                                <RawMaterial ID="rm2" Quantity="1" />
+                            </RawMaterials>
+                            <Products>
+                                <Product ID="d" Quantity="5" />
+                            </Products>
+                        </Deposit>
+                    </Deposits>
+
+                    <ProductionSheets>
+                        <ProductionSheet ID="ps3221">
+                            <ProductionSheetLineProduct>
+                                <Product ID="product1" Quantity="3" />
+                            </ProductionSheetLineProduct>
+                            <ProductionSheetLineRawMaterial>
+                                <RawMaterial ID="rm2" Quantity="5" />
+                                <RawMaterial ID="rm4" Quantity="2" />
+                            </ProductionSheetLineRawMaterial>
+                        </ProductionSheet>
+                        <ProductionSheet ID="ps3222">
+                            <ProductionSheetLineProduct>
+                                <Product ID="product1" Quantity="3" />
+                            </ProductionSheetLineProduct>
+                            <ProductionSheetLineRawMaterial>
+                                <RawMaterial ID="rm1" Quantity="5" />
+                                <RawMaterial ID="rm3" Quantity="2" />
+                            </ProductionSheetLineRawMaterial>
+                        </ProductionSheet>
+                    </ProductionSheets>
+
+                    <Lots>
+                        <Lot internalCode="lot1" />
+                    </Lots>
+
+                    <ProductionOrders>
+                        <ProductionOrder internalCode="po1">
+                            <Description>po1</Description>
+                            <State>Suspended</State>
+                            <Lot ID="lot1" />
+                            <Request ID="req1" />
+                            <EmissionDate>2022-10-10</EmissionDate>
+                            <PredictedExecutionDate>2023-10-10</PredictedExecutionDate>
+                            <ProductionSheet ID="ps1" />
+                            <QuantityToProduce>1</QuantityToProduce>
+                        </ProductionOrder>
+                    </ProductionOrders>
+
+                    <ProductionLines>
+                        <ProductionLine internalCode="pl1">
+                            <Description>pl1</Description>
+                            <Machines>
+                                <Machine ID="m1" />
+                                <Machine ID="m2" />
+                            </Machines>
+                        </ProductionLine>
+                    </ProductionLines>
+
+                    <Consumptions>
+                        <EffectiveConsumptions>
+                            <Consumption machine="mach1" deposit="d1" rawMaterial="rm1">
+                                <quantity>20</quantity>
+                            </Consumption>
+                            <Consumption machine="mach1" deposit="d1" rawMaterial="rm2">
+                                <quantity>20</quantity>
+                            </Consumption>
+                            <Consumption machine="mach1" deposit="d2" product="product3">
+                                <quantity>10</quantity>
+                            </Consumption>
+                            <Consumption machine="mach1" deposit="d2" product="product2">
+                                <quantity>20</quantity>
+                            </Consumption>
+                            <Consumption machine="mach1" product="product4">
+                                <quantity>20</quantity>
+                            </Consumption>
+                        </EffectiveConsumptions>
+                        <RealConsumptions>
+                            <Deposit id="d1">
+                                <quantity>40</quantity>
+                            </Deposit>
+                            <Deposit id="d2">
+                                <quantity>30</quantity>
+                            </Deposit>
+                            <RawMaterial id="rm1">
+                                <quantity>20</quantity>
+                            </RawMaterial>
+                            <RawMaterial id="rm2">
+                                <quantity>20</quantity>
+                            </RawMaterial>
+                            <Product id="product3">
+                                <quantity>10</quantity>
+                            </Product>
+                            <Product id="product2">
+                                <quantity>20</quantity>
+                            </Product>
+                        </RealConsumptions>
+                    </Consumptions>
+
+                    <Wastes>
+                        <!--1 or more repetitions:-->
+                        <Waste quantity="3">
+                            <Machine InternalCode="mach1"/>
+                            <Deposit ID="d2"/>
+                            <!--Optional:-->
+                            <RawMaterial ID="rm2"/>
+                            <ProductionOrder ID="po1"/>
+                        </Waste>
+                        <Waste quantity="30">
+                            <Machine InternalCode="mach2"/>
+                            <Deposit ID="d2"/>
+                            <!--Optional:-->
+                            <Product ID="product1"/>
+                            <ProductionOrder ID="po1"/>
+                        </Waste>
+                    </Wastes>
+
+                    <Machines>
+                        <Machine InternalCode="mach1" State="Disable">
+                            <SerialNumber>A12031010230</SerialNumber>
+                            <Description>Máquina de engomar</Description>
+                            <InstallationDate>2008-11-15</InstallationDate>
+                            <Brand>Ford</Brand>
+                            <Model>103</Model>
+                            <!--Optional:-->
+                            <Protocol ID="100" />
+                            <ConfigurationFiles>
+                                <!--1 or more repetitions:-->
+                                <ConfigurationFile File="string.txt">config1</ConfigurationFile>
+                            </ConfigurationFiles>
+                        </Machine>
+                        <Machine InternalCode="mach2" State="Active">
+                            <SerialNumber>A12031010231</SerialNumber>
+                            <Description>Máquina de Parafusar</Description>
+                            <InstallationDate>2008-11-15</InstallationDate>
+                            <Brand>Ford</Brand>
+                            <Model>105</Model>
+                            <!--Optional:-->
+                            <Machine InternalCode="mach1" />
+                            <ConfigurationFiles>
+                                <!--1 or more repetitions:-->
+                                <ConfigurationFile File="config0.txt">config10</ConfigurationFile>
+                                <ConfigurationFile File="config.1txt">config11</ConfigurationFile>
+                                <ConfigurationFile File="config.t2xt">config12</ConfigurationFile>
+                            </ConfigurationFiles>
+                        </Machine>
+                    </Machines>
+
+                    <EffectiveTimes>
+                        <!--1 or more repetitions:-->
+                        <EffectiveTime Minutes="5" Seconds="3">
+                            <Machine InternalCode="mach1"></Machine>
+                            <ProductionOrder ID="po1"></ProductionOrder>
+                        </EffectiveTime>
+                        <EffectiveTime Minutes="10" Seconds="0">
+                            <Machine InternalCode="mach2"></Machine>
+                            <ProductionOrder ID="po1"></ProductionOrder>
+                        </EffectiveTime>
+                    </EffectiveTimes>
+
+                    <BruteTimes>
+                        <!--1 or more repetitions:-->
+                        <BruteTime Minutes="5" Seconds="3">
+                            <Machine InternalCode="mach1"></Machine>
+                            <ProductionOrder ID="po1"></ProductionOrder>
+                        </BruteTime>
+                        <BruteTime Minutes="15" Seconds="36">
+                            <Machine InternalCode="mach2"></Machine>
+                            <ProductionOrder ID="po1"></ProductionOrder>
+                        </BruteTime>
+                    </BruteTimes>
+                </SSFM>
+                ]]>
+            </ns1:bloco>
+        </ns1:codigo>
+    </ns1:anexos>
+
+</ns1:relatório>

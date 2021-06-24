@@ -1,0 +1,133 @@
+
+        "Raw Material Categories" : { "RawMaterialCategory" :[ 
+        
+        {
+        "name" : "cat1",
+        "description" : "Wood",
+        },
+    
+        {
+        "name" : "cat2",
+        "description" : "Metal",
+        },
+    
+        ]},
+    
+        "Raw Materials" : { "RawMaterial" :[ 
+        
+        {
+        "internalCode" : "rm1",
+        "nameRawMaterial" : "cat1",
+        "description" : "softwood",
+        "TechnicalSheet" : {
+         
+        "nameTechnicalSheet" : "softwood.pdf"
+        }
+        },
+        },
+    
+        {
+        "internalCode" : "rm2",
+        "nameRawMaterial" : "cat1",
+        "description" : "softwood",
+        "TechnicalSheet" : {
+         
+        "nameTechnicalSheet" : "softwood.pdf"
+        }
+        },
+        },
+    
+        {
+        "internalCode" : "rm3",
+        "nameRawMaterial" : "cat2",
+        "description" : "iron",
+        "TechnicalSheet" : {
+         
+        "nameTechnicalSheet" : "iron.pdf"
+        }
+        },
+        },
+    
+        {
+        "internalCode" : "rm4",
+        "nameRawMaterial" : "cat2",
+        "description" : "steel",
+        "TechnicalSheet" : {
+         
+        "nameTechnicalSheet" : "steel.pdf"
+        }
+        },
+        },
+    
+        ]},
+    
+        "Consumptions" : {
+        
+        "EffectiveConsumptions" : { "Consumption" : [
+        
+        {
+        "machine" : "m1",
+        "deposit" : "d1",
+        "rawMaterial" : "rm1",
+        "quantity" : "20",
+        },
+    
+        {
+        "machine" : "m2",
+        "deposit" : "d2",
+        "rawMaterial" : "rm2",
+        "quantity" : "20",
+        },
+    
+        {
+        "machine" : "m2",
+        "deposit" : "d2",
+        "rawMaterial" : "product3",
+        "quantity" : "10",
+        },
+    
+        {
+        "machine" : "m2",
+        "deposit" : "d2",
+        "rawMaterial" : "product2",
+        "quantity" : "20",
+        },
+    
+        ]},
+    
+        "RealConsumptions" : {
+        
+        "Deposit" : {
+        "deposit" : "d1",
+        "quantity": "40",
+        },
+    
+        "Deposit" : {
+        "deposit" : "d2",
+        "quantity": "30",
+        },
+    
+        "RawMaterial" : {
+        "rawMaterial" : "rm1",
+        "quantity" : "20",
+        },
+    
+        "RawMaterial" : {
+        "rawMaterial" : "rm2",
+        "quantity" : "20",
+        },
+    
+        "Product" : {
+        "product" : "product3",
+        "quantity" : "10",
+        },
+    
+        "Product" : {
+        "product" : "product2",
+        "quantity" : "20",
+        },
+    
+        },
+    
+        },
+    

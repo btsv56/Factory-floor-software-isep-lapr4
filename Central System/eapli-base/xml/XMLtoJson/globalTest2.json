@@ -1,0 +1,122 @@
+
+        {
+            "Stock Management" : {
+                
+        "Consumptions" : {
+        
+        "EffectiveConsumptions" : { "Consumption" : [
+        
+        {
+        "machine" : "mach1",
+        "deposit" : "d1",
+        "rawMaterial" : "rm1",
+        "quantity" : "20"
+        },
+        {
+        "machine" : "mach1",
+        "deposit" : "d1",
+        "rawMaterial" : "rm2",
+        "quantity" : "20"
+        },
+        {
+        "machine" : "mach1",
+        "deposit" : "d2",
+        "rawMaterial" : "product3",
+        "quantity" : "10"
+        },
+        {
+        "machine" : "mach1",
+        "deposit" : "d2",
+        "rawMaterial" : "product2",
+        "quantity" : "20"
+        },
+        {
+        "machine" : "mach1",
+        "deposit" : "",
+        "rawMaterial" : "product4",
+        "quantity" : "20"
+        }
+        ]},
+        "RealConsumptions1" : {
+        
+        "Deposit1" : {
+        "deposit" : "d1",
+        "quantity": "40"
+        },
+        "Deposit2" : {
+        "deposit" : "d2",
+        "quantity": "30"
+        },
+        "RawMaterial1" : {
+        "rawMaterial" : "rm1",
+        "quantity" : "20"
+        },
+        "RawMaterial2" : {
+        "rawMaterial" : "rm2",
+        "quantity" : "20"
+        },
+        "Product1" : {
+        "product" : "product3",
+        "quantity" : "10"
+        },
+        "Product2" : {
+        "product" : "product2",
+        "quantity" : "20"
+        }
+        }
+        }
+    
+            },
+            
+            
+        "Wastes" :[
+            {
+                "ProductionOrder" : "po1",
+                "Machine" : "mach1",
+                "RawMaterial" : "rm2",
+                "Quantity" : "3",
+                "Deposit" : "d2"
+            },
+            {
+                "ProductionOrder" : "po1",
+                "Machine" : "mach2",
+                "Product" : "product1",
+                "Quantity" : "30",
+                "Deposit" : "d2"
+            }
+        ]
+    ,
+            
+        "EffectiveTimes" :[
+            {
+                "ProductionOrder" : "po1",
+                "Machine" : "mach1",
+                "Minutes" : "5",
+                "Seconds" : "3"
+            },
+            {
+                "ProductionOrder" : "po1",
+                "Machine" : "mach2",
+                "Minutes" : "10",
+                "Seconds" : "0"
+            }
+        ]
+    ,
+            
+        "BruteTimes" :[
+            {
+                "ProductionOrder" : "po1",
+                "Machine" : "mach1",
+                "Minutes" : "5",
+                "Seconds" : "3"
+            },
+            {
+                "ProductionOrder" : "po1",
+                "Machine" : "mach2",
+                "Minutes" : "15",
+                "Seconds" : "36"
+            }
+        ]
+    
+        }
+    

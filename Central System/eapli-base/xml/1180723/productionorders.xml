@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ProductionOrderCatalogue
+  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+  xsi:noNamespaceSchemaLocation='productionorders.xsd'>
+  <!--1 or more repetitions:-->
+  <ProductionOrder internalCode="po1">
+    <Description>po1</Description>
+    <State>Suspended</State>
+    <!--1 or more repetitions:-->
+    <Lot ID="lot1"/>
+    <Request ID="req1"/>
+    <EmissionDate>2007-10-26</EmissionDate>
+    <PredictedExecutionDate>2007-10-27</PredictedExecutionDate>
+    <ProductionSheet ID="ps1"/>
+	<QuantityToProduce>2</QuantityToProduce>
+  </ProductionOrder>
+</ProductionOrderCatalogue>

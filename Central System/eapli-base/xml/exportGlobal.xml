@@ -1,0 +1,285 @@
+<SSFM>
+<RawMaterialCategories>
+<RawMaterialCategory name="wood">
+<description>wood</description>
+</RawMaterialCategory>
+<RawMaterialCategory name="plastic">
+<description>plastic</description>
+</RawMaterialCategory>
+<RawMaterialCategory name="metal">
+<description>metal</description>
+</RawMaterialCategory>
+</RawMaterialCategories>
+<RawMaterials>
+<RawMaterial internalCode="raw_material_1" nameRawMaterialCategory="wood">
+<description>softwood</description>
+<TechnicalSheet>
+<nameTechnicalSheet>softwood.pdf</nameTechnicalSheet>
+</TechnicalSheet>
+</RawMaterial>
+<RawMaterial internalCode="raw_material_2" nameRawMaterialCategory="wood">
+<description>hardwood</description>
+<TechnicalSheet>
+<nameTechnicalSheet>hardwood.pdf</nameTechnicalSheet>
+</TechnicalSheet>
+</RawMaterial>
+<RawMaterial internalCode="raw_material_3" nameRawMaterialCategory="plastic">
+<description>plastic bottle</description>
+<TechnicalSheet>
+<nameTechnicalSheet>platic bottle.pdf</nameTechnicalSheet>
+</TechnicalSheet>
+</RawMaterial>
+<RawMaterial internalCode="raw_material_4" nameRawMaterialCategory="plastic">
+<description>polyamide</description>
+<TechnicalSheet>
+<nameTechnicalSheet>polyamide.pdf</nameTechnicalSheet>
+</TechnicalSheet>
+</RawMaterial>
+<RawMaterial internalCode="raw_material_5" nameRawMaterialCategory="metal">
+<description>steel</description>
+<TechnicalSheet>
+<nameTechnicalSheet>steel.pdf</nameTechnicalSheet>
+</TechnicalSheet>
+</RawMaterial>
+<RawMaterial internalCode="raw_material_6" nameRawMaterialCategory="metal">
+<description>iron</description>
+<TechnicalSheet>
+<nameTechnicalSheet>iron.pdf</nameTechnicalSheet>
+</TechnicalSheet>
+</RawMaterial>
+</RawMaterials>
+<Products>
+<Product fabricationCode="1000">
+<comercialCode>1000</comercialCode>
+<briefDescription>rato</briefDescription>
+<completeDescription>Produto muito bem bom para fazer coisas</completeDescription>
+<productCategory>informatica</productCategory>
+<unity>U1</unity>
+<productionSheet>ps1112</productionSheet>
+</Product>
+<Product fabricationCode="1001">
+<comercialCode>1001</comercialCode>
+<briefDescription>macaneta</briefDescription>
+<completeDescription>Produto mais bem bom para fazer coisas</completeDescription>
+<productCategory>carpintaria</productCategory>
+<unity>U2</unity>
+<productionSheet>ps1113</productionSheet>
+</Product>
+<Product fabricationCode="1002">
+<comercialCode>1002</comercialCode>
+<briefDescription>Conversor RCA/AV</briefDescription>
+<completeDescription>Conversor RCA/AV para HDMI 1080p (novo)</completeDescription>
+<productCategory>informatica</productCategory>
+<unity>U2</unity>
+<productionSheet>ps1114</productionSheet>
+</Product>
+<Product fabricationCode="1003">
+<comercialCode>1003</comercialCode>
+<briefDescription>liquidificador</briefDescription>
+<completeDescription>marca Moulinex / modelo Deposite</completeDescription>
+<productCategory>cozinha</productCategory>
+<unity>U2</unity>
+<productionSheet>ps1111</productionSheet>
+</Product>
+<Product fabricationCode="1004">
+<comercialCode>1004</comercialCode>
+<briefDescription>Punhal decorativo</briefDescription>
+<completeDescription>Punhal decorativo todo trabalhador</completeDescription>
+<productCategory>fantasias</productCategory>
+<unity>U1</unity>
+<productionSheet></productionSheet>
+</Product>
+</Products>
+    <Deposits>
+        <Deposit internalCode="depo_1">
+            <Description>Deposit 1</Description>
+            <RawMaterials>
+                <RawMaterial ID="raw_material_1" Quantity="0"/>
+            </RawMaterials>
+        </Deposit>
+        <Deposit internalCode="depo_2">
+            <Description>Deposit 2</Description>
+            <RawMaterials>
+                <RawMaterial ID="raw_material_2" Quantity="0"/>
+            </RawMaterials>
+        </Deposit>
+        <Deposit internalCode="depo_3">
+            <Description>Deposit 3</Description>
+            <RawMaterials>
+                <RawMaterial ID="raw_material_6" Quantity="0"/>
+            </RawMaterials>
+        </Deposit>
+        <Deposit internalCode="depo_4">
+            <Description>Deposit 4</Description>
+            <Products>
+                <Product ID="1000" Quantity="0"/>
+            </Products>
+        </Deposit>
+        <Deposit internalCode="depo_5">
+            <Description>Deposit 5</Description>
+            <RawMaterials>
+                <RawMaterial ID="raw_material_5" Quantity="0"/>
+            </RawMaterials>
+            <Products>
+                <Product ID="1001" Quantity="0"/>
+            </Products>
+        </Deposit>
+    </Deposits>
+<ProductionSheets>
+<ProductionSheet ID="ps1111">
+<ProductionSheetLineProduct>
+<Product ID="1000" Quantity="2"/>
+</ProductionSheetLineProduct>
+<ProductionSheetLineProduct>
+<Product ID="1001" Quantity="2"/>
+</ProductionSheetLineProduct>
+<ProductionSheetLineRawMaterial>
+<RawMaterial ID="raw_material_1" Quantity="3"/>
+</ProductionSheetLineRawMaterial>
+<ProductionSheetLineRawMaterial>
+<RawMaterial ID="raw_material_2" Quantity="3"/>
+</ProductionSheetLineRawMaterial>
+</ProductionSheet>
+<ProductionSheet ID="ps1112">
+<ProductionSheetLineProduct>
+<Product ID="1002" Quantity="2"/>
+</ProductionSheetLineProduct>
+<ProductionSheetLineProduct>
+<Product ID="1003" Quantity="2"/>
+</ProductionSheetLineProduct>
+<ProductionSheetLineRawMaterial>
+<RawMaterial ID="raw_material_1" Quantity="3"/>
+</ProductionSheetLineRawMaterial>
+</ProductionSheet>
+<ProductionSheet ID="ps1113">
+<ProductionSheetLineProduct>
+<Product ID="1000" Quantity="2"/>
+</ProductionSheetLineProduct>
+<ProductionSheetLineProduct>
+<Product ID="1002" Quantity="2"/>
+</ProductionSheetLineProduct>
+<ProductionSheetLineRawMaterial>
+<RawMaterial ID="raw_material_1" Quantity="3"/>
+</ProductionSheetLineRawMaterial>
+<ProductionSheetLineRawMaterial>
+<RawMaterial ID="raw_material_2" Quantity="3"/>
+</ProductionSheetLineRawMaterial>
+<ProductionSheetLineRawMaterial>
+<RawMaterial ID="raw_material_6" Quantity="3"/>
+</ProductionSheetLineRawMaterial>
+</ProductionSheet>
+<ProductionSheet ID="ps1114">
+<ProductionSheetLineRawMaterial>
+<RawMaterial ID="raw_material_5" Quantity="3"/>
+</ProductionSheetLineRawMaterial>
+</ProductionSheet>
+</ProductionSheets>
+    <Lots>
+        <Lot internalCode="LO1"/>
+    </Lots>
+    <ProductionOrders>
+        <ProductionOrder internalCode="po1">
+            <Description>po1</Description>
+            <State>Pending</State>
+            <Lot ID="LO1"/>
+            <EmissionDate>2020-06-12</EmissionDate>
+            <PredictedExecutionDate>2020-12-20</PredictedExecutionDate>
+            <ProductionSheet ID="ps1111"/>
+            <Deposit/>
+            <QuantityToProduce>10</QuantityToProduce>
+        </ProductionOrder>
+    </ProductionOrders>
+    <ProductionLines>
+        <ProductionLine internalCode="pline_1">
+            <Description>Production Line 1</Description>
+            <Machines>
+                <Machine ID="1000"/>
+                <Machine ID="1001"/>
+            </Machines>
+        </ProductionLine>
+        <ProductionLine internalCode="pline_2">
+            <Description>Production Line 2</Description>
+            <Machines>
+                <Machine ID="1002"/>
+                <Machine ID="1003"/>
+            </Machines>
+        </ProductionLine>
+        <ProductionLine internalCode="pline_3">
+            <Description>Production Line 3</Description>
+        </ProductionLine>
+        <ProductionLine internalCode="pline_4">
+            <Description>Production Line 4</Description>
+        </ProductionLine>
+        <ProductionLine internalCode="pline_5">
+            <Description>Production Line 5</Description>
+        </ProductionLine>
+    </ProductionLines>
+<Wastes>
+</Wastes>
+<Machines>
+<Machine InternalCode="1000" State="standby">
+<SerialNumber>1A</SerialNumber>
+<Description>machine 1</Description>
+<InstallationDate>2007-03-05</InstallationDate>
+<Brand>Pops</Brand>
+<Model>Manu</Model>
+<Protocol ID="1000"/>
+<ConfigurationFiles>
+</ConfigurationFiles>
+</Machine>
+<Machine InternalCode="1001" State="standby">
+<SerialNumber>1B</SerialNumber>
+<Description>machine 2</Description>
+<InstallationDate>2007-03-05</InstallationDate>
+<Brand>Pops</Brand>
+<Model>Manu</Model>
+<Protocol ID="1001"/>
+<ConfigurationFiles>
+</ConfigurationFiles>
+</Machine>
+<Machine InternalCode="1002" State="standby">
+<SerialNumber>1C</SerialNumber>
+<Description>machine 3</Description>
+<InstallationDate>2007-03-05</InstallationDate>
+<Brand>Pops</Brand>
+<Model>Manu</Model>
+<Protocol ID="1002"/>
+<ConfigurationFiles>
+</ConfigurationFiles>
+</Machine>
+<Machine InternalCode="1003" State="standby">
+<SerialNumber>1D</SerialNumber>
+<Description>machine 4</Description>
+<InstallationDate>2007-03-05</InstallationDate>
+<Brand>Pops</Brand>
+<Model>Manu</Model>
+<Protocol ID="1003"/>
+<ConfigurationFiles>
+</ConfigurationFiles>
+</Machine>
+<Machine InternalCode="1004" State="standby">
+<SerialNumber>1E</SerialNumber>
+<Description>machine 5</Description>
+<InstallationDate>2007-03-05</InstallationDate>
+<Brand>Pops</Brand>
+<Model>Manu</Model>
+<Protocol ID="1004"/>
+<ConfigurationFiles>
+</ConfigurationFiles>
+</Machine>
+<Machine InternalCode="1005" State="standby">
+<SerialNumber>1F</SerialNumber>
+<Description>machine 6</Description>
+<InstallationDate>2007-03-05</InstallationDate>
+<Brand>Pops</Brand>
+<Model>Manu</Model>
+<Protocol ID="1005"/>
+<ConfigurationFiles>
+</ConfigurationFiles>
+</Machine>
+</Machines>
+<EffectiveTimes>
+</EffectiveTimes>
+<BruteTimes>
+</BruteTimes>
+</SSFM>

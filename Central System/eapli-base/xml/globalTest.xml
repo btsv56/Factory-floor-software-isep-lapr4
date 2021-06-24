@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<SSFM xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="global.xsd">
+
+    <RawMaterialCategories>
+        <RawMaterialCategory name="cat1">
+            <description>Wood</description>
+        </RawMaterialCategory>
+        <RawMaterialCategory name="cat2">
+            <description>Metal</description>
+        </RawMaterialCategory>
+    </RawMaterialCategories>
+
+    <RawMaterials>
+        <RawMaterial internalCode="rm1" nameRawMaterialCategory="cat1">
+            <description>softwood</description>
+            <TechnicalSheet>
+                <nameTechnicalSheet>softwood.pdf</nameTechnicalSheet>
+            </TechnicalSheet>
+        </RawMaterial>
+        <RawMaterial internalCode="rm2" nameRawMaterialCategory="cat1">
+            <description>softwood</description>
+            <TechnicalSheet>
+                <nameTechnicalSheet>softwood.pdf</nameTechnicalSheet>
+            </TechnicalSheet>
+        </RawMaterial>
+        <RawMaterial internalCode="rm3" nameRawMaterialCategory="cat2">
+            <description>iron</description>
+            <TechnicalSheet>
+                <nameTechnicalSheet>iron.pdf</nameTechnicalSheet>
+            </TechnicalSheet>
+        </RawMaterial>
+        <RawMaterial internalCode="rm4" nameRawMaterialCategory="cat2">
+            <description>steel</description>
+            <TechnicalSheet>
+                <nameTechnicalSheet>steel.pdf</nameTechnicalSheet>
+            </TechnicalSheet>
+        </RawMaterial>
+    </RawMaterials>
+
+    <Products>
+        <Product fabricationCode="product1">
+            <comercialCode>cc23321</comercialCode>
+            <briefDescription>Iron Pickaxe</briefDescription>
+            <completeDescription>Iron Pickaxe for Mining</completeDescription>
+            <productCategory>Tools</productCategory>
+            <unity>UN</unity>
+            <productionSheet>ps3221</productionSheet>
+        </Product>
+        <Product fabricationCode="product4">
+            <comercialCode>cc23321</comercialCode>
+            <briefDescription>Iron Picaxe</briefDescription>
+            <completeDescription>Iron Picaxe for Mining</completeDescription>
+            <productCategory>Tools</productCategory>
+            <unity>UN</unity>
+            <productionSheet>ps3221</productionSheet>
+        </Product>
+        <Product fabricationCode="product2">
+            <comercialCode>cc23321</comercialCode>
+            <briefDescription>Iron Pickaxe</briefDescription>
+            <completeDescription>Iron Pickaxe for Mining</completeDescription>
+            <productCategory>Tools</productCategory>
+            <unity>UN</unity>
+            <productionSheet>ps3221</productionSheet>
+        </Product>
+        <Product fabricationCode="product3">
+            <comercialCode>cc23111</comercialCode>
+            <briefDescription>Coffee Maker</briefDescription>
+            <completeDescription>Ideal For making coffee</completeDescription>
+            <productCategory>Beverages</productCategory>
+            <unity>UN</unity>
+            <productionSheet>ps3222</productionSheet>
+        </Product>
+    </Products>
+
+    <Deposits>
+        <Deposit internalCode="d1">
+            <Description>d1</Description>
+            <Products>
+                <Product ID="d" Quantity="2" />
+            </Products>
+        </Deposit>
+
+        <Deposit internalCode="d2">
+            <Description>d2</Description>
+            <RawMaterials>
+                <RawMaterial ID="rm2" Quantity="2" />
+            </RawMaterials>
+        </Deposit>
+
+        <Deposit internalCode="d3">
+            <Description>d3</Description>
+            <RawMaterials>
+                <RawMaterial ID="rm2" Quantity="1" />
+            </RawMaterials>
+            <Products>
+                <Product ID="d" Quantity="5" />
+            </Products>
+        </Deposit>
+    </Deposits>
+
+    <ProductionSheets>
+        <ProductionSheet ID="ps3221">
+            <ProductionSheetLineProduct>
+                <Product ID="product1" Quantity="3" />
+            </ProductionSheetLineProduct>
+            <ProductionSheetLineRawMaterial>
+                <RawMaterial ID="rm2" Quantity="5" />
+                <RawMaterial ID="rm4" Quantity="2" />
+            </ProductionSheetLineRawMaterial>
+        </ProductionSheet>
+        <ProductionSheet ID="ps3222">
+            <ProductionSheetLineProduct>
+                <Product ID="product1" Quantity="3" />
+            </ProductionSheetLineProduct>
+            <ProductionSheetLineRawMaterial>
+                <RawMaterial ID="rm1" Quantity="5" />
+                <RawMaterial ID="rm3" Quantity="2" />
+            </ProductionSheetLineRawMaterial>
+        </ProductionSheet>
+    </ProductionSheets>
+
+    <Lots>
+        <Lot internalCode="lot1" />
+    </Lots>
+
+    <ProductionOrders>
+        <ProductionOrder internalCode="po1">
+            <Description>po1</Description>
+            <State>Suspended</State>
+            <Lot ID="lot1" />
+            <Request ID="req1" />
+            <EmissionDate>2022-10-10</EmissionDate>
+            <PredictedExecutionDate>2023-10-10</PredictedExecutionDate>
+            <ProductionSheet ID="ps1" />
+            <QuantityToProduce>1</QuantityToProduce>
+        </ProductionOrder>
+    </ProductionOrders>
+
+    <ProductionLines>
+        <ProductionLine internalCode="pl1">
+            <Description>pl1</Description>
+            <Machines>
+                <Machine ID="m1" />
+                <Machine ID="m2" />
+            </Machines>
+        </ProductionLine>
+    </ProductionLines>
+
+    <Consumptions>
+        <EffectiveConsumptions>
+            <Consumption machine="mach1" deposit="d1" rawMaterial="rm1">
+                <quantity>20</quantity>
+            </Consumption>
+            <Consumption machine="mach1" deposit="d1" rawMaterial="rm2">
+                <quantity>20</quantity>
+            </Consumption>
+            <Consumption machine="mach1" deposit="d2" product="product3">
+                <quantity>10</quantity>
+            </Consumption>
+            <Consumption machine="mach1" deposit="d2" product="product2">
+                <quantity>20</quantity>
+            </Consumption>
+            <Consumption machine="mach1" product="product4">
+                <quantity>20</quantity>
+            </Consumption>
+        </EffectiveConsumptions>
+        <RealConsumptions>
+            <Deposit id="d1">
+                <quantity>40</quantity>
+            </Deposit>
+            <Deposit id="d2">
+                <quantity>30</quantity>
+            </Deposit>
+            <RawMaterial id="rm1">
+                <quantity>20</quantity>
+            </RawMaterial>
+            <RawMaterial id="rm2">
+                <quantity>20</quantity>
+            </RawMaterial>
+            <Product id="product3">
+                <quantity>10</quantity>
+            </Product>
+            <Product id="product2">
+                <quantity>20</quantity>
+            </Product>
+        </RealConsumptions>
+    </Consumptions>
+
+    <Wastes>
+        <!--1 or more repetitions:-->
+        <Waste quantity="3">
+            <Machine InternalCode="mach1"/>
+            <Deposit ID="d2"/>
+            <!--Optional:-->
+            <RawMaterial ID="rm2"/>
+            <ProductionOrder ID="po1"/>
+        </Waste>
+        <Waste quantity="30">
+            <Machine InternalCode="mach2"/>
+            <Deposit ID="d2"/>
+            <!--Optional:-->
+            <Product ID="product1"/>
+            <ProductionOrder ID="po1"/>
+        </Waste>
+    </Wastes>
+
+    <Machines>
+        <Machine InternalCode="mach1" State="Disable">
+            <SerialNumber>A12031010230</SerialNumber>
+            <Description>Máquina de engomar</Description>
+            <InstallationDate>2008-11-15</InstallationDate>
+            <Brand>Ford</Brand>
+            <Model>103</Model>
+            <!--Optional:-->
+            <Protocol ID="100" />
+            <ConfigurationFiles>
+                <!--1 or more repetitions:-->
+                <ConfigurationFile File="string.txt">config1</ConfigurationFile>
+            </ConfigurationFiles>
+        </Machine>
+        <Machine InternalCode="mach2" State="Active">
+            <SerialNumber>A12031010231</SerialNumber>
+            <Description>Máquina de Parafusar</Description>
+            <InstallationDate>2008-11-15</InstallationDate>
+            <Brand>Ford</Brand>
+            <Model>105</Model>
+            <!--Optional:-->
+            <Machine InternalCode="mach1" />
+            <ConfigurationFiles>
+                <!--1 or more repetitions:-->
+                <ConfigurationFile File="config0.txt">config10</ConfigurationFile>
+                <ConfigurationFile File="config.1txt">config11</ConfigurationFile>
+                <ConfigurationFile File="config.t2xt">config12</ConfigurationFile>
+            </ConfigurationFiles>
+        </Machine>
+    </Machines>
+
+    <EffectiveTimes>
+        <!--1 or more repetitions:-->
+        <EffectiveTime Minutes="5" Seconds="3">
+            <Machine InternalCode="mach1"></Machine>
+            <ProductionOrder ID="po1"></ProductionOrder>
+        </EffectiveTime>
+        <EffectiveTime Minutes="10" Seconds="0">
+            <Machine InternalCode="mach2"></Machine>
+            <ProductionOrder ID="po1"></ProductionOrder>
+        </EffectiveTime>
+    </EffectiveTimes>
+
+    <BruteTimes>
+        <!--1 or more repetitions:-->
+        <BruteTime Minutes="5" Seconds="3">
+            <Machine InternalCode="mach1"></Machine>
+            <ProductionOrder ID="po1"></ProductionOrder>
+        </BruteTime>
+        <BruteTime Minutes="15" Seconds="36">
+            <Machine InternalCode="mach2"></Machine>
+            <ProductionOrder ID="po1"></ProductionOrder>
+        </BruteTime>
+    </BruteTimes>
+
+	
+
+
+</SSFM>

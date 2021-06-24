@@ -1,0 +1,421 @@
+<html xmlns:xhtml="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Factory floor</title>
+   </head>
+   <body>
+      <h1>Factory Floor</h1>
+      <table border="1">
+         <h2>Raw Material Categories</h2>
+         <tr>
+            <th>Name</th>
+            <th>Description</th>
+         </tr>
+         <tr>
+            <td>cat1</td>
+            <td>Wood</td>
+         </tr>
+         <tr>
+            <td>cat2</td>
+            <td>Metal</td>
+         </tr>
+      </table>
+      <table border="1">
+         <h2>Raw Materials</h2>
+         <tr>
+            <th>Internal Code</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Technical Sheet</th>
+         </tr>
+         <tr>
+            <td>rm1</td>
+            <td>cat1</td>
+            <td>softwood</td>
+            <td>softwood.pdf</td>
+         </tr>
+         <tr>
+            <td>rm2</td>
+            <td>cat1</td>
+            <td>softwood</td>
+            <td>softwood.pdf</td>
+         </tr>
+         <tr>
+            <td>rm3</td>
+            <td>cat2</td>
+            <td>iron</td>
+            <td>iron.pdf</td>
+         </tr>
+         <tr>
+            <td>rm4</td>
+            <td>cat2</td>
+            <td>steel</td>
+            <td>steel.pdf</td>
+         </tr>
+      </table>
+      <table border="1">
+         <h2>Products</h2>
+         <tr>
+            <th>Fabrication Code</th>
+            <th>Comercial Code</th>
+            <th>Brief Description</th>
+            <th>Complete Description</th>
+            <th>Product Category</th>
+            <th>Unity</th>
+            <th>Production Sheet</th>
+         </tr>
+         <tr>
+            <td>product1</td>
+            <td>cc23321</td>
+            <td>Iron Pickaxe</td>
+            <td>Iron Pickaxe for Mining</td>
+            <td>Tools</td>
+            <td>UN</td>
+            <td>ps3221</td>
+         </tr>
+         <tr>
+            <td>product4</td>
+            <td>cc23321</td>
+            <td>Iron Picaxe</td>
+            <td>Iron Picaxe for Mining</td>
+            <td>Tools</td>
+            <td>UN</td>
+            <td>ps3221</td>
+         </tr>
+         <tr>
+            <td>product2</td>
+            <td>cc23321</td>
+            <td>Iron Pickaxe</td>
+            <td>Iron Pickaxe for Mining</td>
+            <td>Tools</td>
+            <td>UN</td>
+            <td>ps3221</td>
+         </tr>
+         <tr>
+            <td>product3</td>
+            <td>cc23111</td>
+            <td>Coffee Maker</td>
+            <td>Ideal For making coffee</td>
+            <td>Beverages</td>
+            <td>UN</td>
+            <td>ps3222</td>
+         </tr>
+      </table>
+      <table border="1">
+         <h2>Deposits</h2>
+         <tr>
+            <th>Internal Code</th>
+            <th>Description</th>
+            <th>Raw Materials</th>
+            <th>Quantities</th>
+            <th>Products</th>
+            <th>Quantities</th>
+         </tr>
+         <tr>
+            <td>d1</td>
+            <td>d1</td>
+            <td></td>
+            <td></td>
+            <td><br>d</br></td>
+            <td><br>2</br></td>
+         </tr>
+         <tr>
+            <td>d2</td>
+            <td>d2</td>
+            <td><br>rm2</br></td>
+            <td><br>2</br></td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>d3</td>
+            <td>d3</td>
+            <td><br>rm2</br></td>
+            <td><br>1</br></td>
+            <td><br>d</br></td>
+            <td><br>5</br></td>
+         </tr>
+      </table>
+      <table border="1">
+         <h2>Production Sheets</h2>
+         <tr>
+            <th>Production Sheet ID</th>
+            <th>Products</th>
+            <th>Quantity</th>
+            <th>Raw Materials</th>
+            <th>Quantity</th>
+         </tr>
+         <tr>
+            <th>ps3221</th>
+            <td><br>product1</br></td>
+            <td><br>3</br></td>
+            <td><br>rm2</br><br>rm4</br></td>
+            <td><br>5</br><br>2</br></td>
+         </tr>
+         <tr>
+            <th>ps3222</th>
+            <td><br>product1</br></td>
+            <td><br>3</br></td>
+            <td><br>rm1</br><br>rm3</br></td>
+            <td><br>5</br><br>2</br></td>
+         </tr>
+      </table>
+      <table border="1">
+         <h2>Lots</h2>
+         <tr>
+            <th>Internal Code</th>
+         </tr>
+         <tr>
+            <td>lot1</td>
+         </tr>
+      </table>
+      <table border="1">
+         <h2>Production Orders</h2>
+         <tr>
+            <th>Internal Code</th>
+            <th>Description</th>
+            <th>State</th>
+            <th>Lot</th>
+            <th>Request</th>
+            <th>Emission Date</th>
+            <th>Predicted Execution Date</th>
+            <th>Production Sheet ID</th>
+            <th>Quantity To Produce</th>
+         </tr>
+         <tr>
+            <td>po1</td>
+            <td>po1</td>
+            <td>Suspended</td>
+            <td>lot1</td>
+            <td>req1</td>
+            <td>2022-10-10</td>
+            <td>2023-10-10</td>
+            <td>ps1</td>
+            <td>1</td>
+         </tr>
+      </table>
+      <table border="1">
+         <h2>Production Lines</h2>
+         <tr>
+            <th>Internal Code</th>
+            <th>Description</th>
+            <th>Machines</th>
+         </tr>
+         <tr>
+            <td>pl1</td>
+            <td>pl1</td>
+            <td><br>m1</br><br>m2</br></td>
+         </tr>
+      </table>
+      <h2>Consumptions</h2>
+      <table border="1">
+         <h2>Effective Consumptions</h2>
+         <tr>
+            <th>Machine</th>
+            <th>Deposit</th>
+            <th>Raw Material</th>
+            <th>Quantity</th>
+         </tr>
+         <tr>
+            <td>mach1</td>
+            <td>d1</td>
+            <td>rm1</td>
+            <td>20</td>
+         </tr>
+         <tr>
+            <td>mach1</td>
+            <td>d1</td>
+            <td>rm2</td>
+            <td>20</td>
+         </tr>
+         <tr>
+            <td>mach1</td>
+            <td>d2</td>
+            <td>product3</td>
+            <td>10</td>
+         </tr>
+         <tr>
+            <td>mach1</td>
+            <td>d2</td>
+            <td>product2</td>
+            <td>20</td>
+         </tr>
+         <tr>
+            <td>mach1</td>
+            <td></td>
+            <td>product4</td>
+            <td>20</td>
+         </tr>
+      </table>
+      <h2>Real Consumptions</h2>
+      <table border="1">
+         <h3>Deposit Consumptions</h3>
+         <tr>
+            <th>Deposit</th>
+            <th>Quantity</th>
+         </tr>
+         <tr>
+            <td>d1</td>
+            <td>40</td>
+         </tr>
+         <tr>
+            <td>d2</td>
+            <td>30</td>
+         </tr>
+      </table>
+      <h3>Raw Material Consumptions</h3>
+      <Table border="1">
+         <tr>
+            <th>Raw Material</th>
+            <th>Quantity</th>
+         </tr>
+         <tr>
+            <td>rm1</td>
+            <td>20</td>
+         </tr>
+         <tr>
+            <td>rm2</td>
+            <td>20</td>
+         </tr>
+      </Table>
+      <h3>Product Consumptions</h3>
+      <Table border="1">
+         <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+         </tr>
+         <tr>
+            <td>product3</td>
+            <td>10</td>
+         </tr>
+         <tr>
+            <td>product2</td>
+            <td>20</td>
+         </tr>
+      </Table>
+      <h3>Machines</h3>
+      <table border="1">
+         <tr>
+            <th>Internal Code</th>
+            <th>State</th>
+            <th>Serial Number</th>
+            <th>Description</th>
+            <th>Installation Date</th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Protocol</th>
+            <th>Followed by Machine</th>
+         </tr>
+         <tr>
+            <td>mach1</td>
+            <td>Disable</td>
+            <td>A12031010230</td>
+            <td>Máquina de engomar</td>
+            <td>2008-11-15</td>
+            <td>Ford</td>
+            <td>103</td>
+            <td>100</td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>mach2</td>
+            <td>Active</td>
+            <td>A12031010231</td>
+            <td>Máquina de Parafusar</td>
+            <td>2008-11-15</td>
+            <td>Ford</td>
+            <td>105</td>
+            <td></td>
+            <td>mach1</td>
+         </tr>
+      </table>
+      <h3>Configuration Files</h3>
+      <table border="1">
+         <tr>
+            <th>Machine</th>
+            <th>Description</th>
+         </tr>
+         <tr>
+            <td>mach1</td>
+            <td>config1</td>
+         </tr>
+         <tr>
+            <td>mach2</td>
+            <td>config10</td>
+         </tr>
+         <tr>
+            <td>mach2</td>
+            <td>config11</td>
+         </tr>
+         <tr>
+            <td>mach2</td>
+            <td>config12</td>
+         </tr>
+      </table>
+      <h3>Wastes</h3>
+      <table border="1">
+         <tr>
+            <th>Production Order</th>
+            <th>Machine</th>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Deposit</th>
+         </tr>
+         <tr>
+            <td>po1</td>
+            <td>mach1</td>
+            <td>rm2</td>
+            <td>3</td>
+            <td>d2</td>
+         </tr>
+         <tr>
+            <td>po1</td>
+            <td>mach2</td>
+            <td>product1</td>
+            <td>30</td>
+            <td>d2</td>
+         </tr>
+      </table>
+      <h3>Effective Times</h3>
+      <table border="1">
+         <tr>
+            <th>Production Order</th>
+            <th>Machine</th>
+            <th>Minutes</th>
+            <th>Seconds</th>
+         </tr>
+         <tr>
+            <td>po1</td>
+            <td>mach1</td>
+            <td>5</td>
+            <td>3</td>
+         </tr>
+         <tr>
+            <td>po1</td>
+            <td>mach2</td>
+            <td>10</td>
+            <td>0</td>
+         </tr>
+      </table>
+      <h3>Brute Times</h3>
+      <table border="1">
+         <tr>
+            <th>Production Order</th>
+            <th>Machine</th>
+            <th>Minutes</th>
+            <th>Seconds</th>
+         </tr>
+         <tr>
+            <td>po1</td>
+            <td>mach1</td>
+            <td>5</td>
+            <td>3</td>
+         </tr>
+         <tr>
+            <td>po1</td>
+            <td>mach2</td>
+            <td>15</td>
+            <td>36</td>
+         </tr>
+      </table>
+   </body>
+</html>

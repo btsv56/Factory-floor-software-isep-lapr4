@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:element name="ProductCatalogue" type="ProductCatalogueType"/>
+
+    <xsd:complexType name="ProductCatalogueType">
+        <xsd:sequence>
+            <xsd:element name="Product" type="ProductType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+	
+	<xsd:simpleType name="fabricationCodeType">
+        <xsd:restriction base="xsd:string">
+            <xsd:length value="15"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="comercialCodeType">
+        <xsd:restriction base="xsd:string">
+            <xsd:length value="15"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="briefDescriptionType">
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="completeDescriptionType">
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="productCategoryType">
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="unityType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="KG"/>
+            <xsd:enumeration value="UN"/>
+            <xsd:enumeration value="G"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="productionSheetType">
+        <xsd:restriction base="xsd:string">
+            <xsd:length value="15"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="ProductType">
+        <xsd:sequence>
+            <xsd:element name="FabricationCode" type="fabricationCodeType"/>
+            <xsd:element name="ComercialCode" type="comercialCodeType"/>
+            <xsd:element name="BriefDescription" type="briefDescriptionType"/>
+            <xsd:element name="CompleteDescription" type="completeDescriptionType"/>
+            <xsd:element name="ProductCategory" type="productCategoryType"/>
+            <xsd:element name="Unity" type="unityType"/>
+            <xsd:element name="ProductionSheet" type="productionSheetType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+</xsd:schema>

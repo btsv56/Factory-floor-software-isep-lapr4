@@ -1,0 +1,1 @@
+void *establishConnectionToTheMonitoringSystem(void *mach);

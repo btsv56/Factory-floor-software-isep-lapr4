@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xsd:element name="ProductionOrderCatalogue" type="TProductionOrders"/>
+
+	<xsd:complexType name="TProductionOrders">
+		<xsd:sequence>
+			<xsd:element name="ProductionOrder" type="ProductionOrderType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ProductionOrderType">
+		<xsd:sequence>
+			<xsd:element name="Description" type="xsd:string"/>
+			<xsd:element name="State" type="StateT"/>
+			<xsd:element name="Lot" type="LotT" maxOccurs="unbounded"/>
+			<xsd:element name="Request" type="RequestT"/>
+			<xsd:element name="EmissionDate" type="xsd:date"/>
+			<xsd:element name="PredictedExecutionDate" type="xsd:date"/>
+			<xsd:element name="ProductionSheet" type="ProductionSheetT"/>
+			<xsd:element name="QuantityToProduce" type="TQuantityToProduce"/>
+		</xsd:sequence>
+		<xsd:attribute name="internalCode" type="TInternalCode" use="required"/>
+	</xsd:complexType>
+
+	<xsd:simpleType name="StateT">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Suspended"/>
+			<xsd:enumeration value="Pending"/>
+			<xsd:enumeration value="Executing"/>
+			<xsd:enumeration value="Execution halted temporarily"/>
+			<xsd:enumeration value="Finished"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="LotT">
+		<xsd:attribute name="ID" type="TInternalCode"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="RequestT">
+		<xsd:attribute name="ID" type="TInternalCode"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="ProductionSheetT">
+		<xsd:attribute name="ID" type="TInternalCode"/>
+	</xsd:complexType>
+
+	<xsd:simpleType name="TQuantityToProduce">
+		<xsd:restriction base="xsd:int">
+			<xsd:minExclusive value="0"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="TInternalCode">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="15"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+</xsd:schema>

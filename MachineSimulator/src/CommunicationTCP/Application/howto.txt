@@ -1,0 +1,21 @@
+how to make this work
+
+first create key
+
+openssl genrsa -des3 -out rootCA.key 2048
+
+then create pem
+
+openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem
+
+you now have a key and a certificate
+
+now go to where the server keystore is and import the certificate, also do it to cacerts because why not
+
+now you have encrypted communications BAM
+
+certificate pass is caspar 
+
+when asked for it, you have to enter it twice:
+	
+	"caspar - ENTER - caspar - ENTER"

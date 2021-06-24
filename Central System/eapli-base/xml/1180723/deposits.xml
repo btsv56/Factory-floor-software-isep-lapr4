@@ -1,0 +1,14 @@
+<DepositCatalogue>
+  <!--1 or more repetitions:-->
+  <Deposit internalCode="d1">
+    <Description>d1</Description>
+    <RawMaterials>
+      <!--Zero or more repetitions:-->
+      <RawMaterial ID="mat1" Quantity="100"/>
+    </RawMaterials>
+    <Products>
+      <!--Zero or more repetitions:-->
+      <Product ID="prod1" Quantity="100"/>
+    </Products>
+  </Deposit>
+</DepositCatalogue>

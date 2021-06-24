@@ -1,0 +1,7 @@
+jobs:
+  include:
+    - language: java
+      script: ./Central\ System/eapli-base/pipeline.sh
+
+    - language: c
+      script: make -C MachineSimulator all

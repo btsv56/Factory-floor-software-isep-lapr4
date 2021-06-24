@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:element name="ProductionSheets" type="productionSheetsType"/>
+
+    <xsd:complexType name="productionSheetsType">
+        <xsd:sequence>
+            <xsd:element name="ProductionSheet" type="productionSheetType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="ProductionSheetLineProduct">
+        <xsd:sequence>
+            <xsd:element name="Product" type="productType"/>
+            <xsd:element name="Quantity" type="quantityType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="ProductionSheetLineRawMaterial">
+        <xsd:sequence>
+            <xsd:element name="RawMaterial" type="materialType"/>
+            <xsd:element name="Quantity" type="quantityType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+    <xsd:simpleType name="productType">
+        <xsd:restriction base="xsd:string">
+            <xsd:length value="15"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="materialType">
+        <xsd:restriction base="xsd:string">
+            <xsd:length value="15"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="quantityType">
+        <xsd:restriction base="xsd:integer"/>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="productionSheetIDType">
+        <xsd:restriction base="xsd:string">
+            <xsd:length value="15"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="productionSheetType">
+        <xsd:sequence>
+            <xsd:element name="ProductionSheetID" type="productionSheetIDType"/>
+            <xsd:element name="ProductionSheetLineProduct" type="ProductionSheetLineProduct"/>
+            <xsd:element name="ProductionSheetLineRawMaterial" type="ProductionSheetLineRawMaterial"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+</xsd:schema>

@@ -1,0 +1,234 @@
+
+        {
+            "SSFM" : {
+                
+        "Raw Material Categories" : { "RawMaterialCategory" :[ 
+        
+        {
+        "name" : "cat1",
+        "description" : "Wood"
+        },
+        {
+        "name" : "cat2",
+        "description" : "Metal"
+        }
+        ]},
+    
+        "Raw Materials" : { "RawMaterial" :[ 
+        
+        {
+        "internalCode" : "rm1",
+        "nameRawMaterial" : "cat1",
+        "description" : "softwood",
+        "TechnicalSheet" : {
+         
+        "nameTechnicalSheet" : "softwood.pdf"
+        }
+        },
+        {
+        "internalCode" : "rm2",
+        "nameRawMaterial" : "cat1",
+        "description" : "softwood",
+        "TechnicalSheet" : {
+         
+        "nameTechnicalSheet" : "softwood.pdf"
+        }
+        },
+        {
+        "internalCode" : "rm3",
+        "nameRawMaterial" : "cat2",
+        "description" : "iron",
+        "TechnicalSheet" : {
+         
+        "nameTechnicalSheet" : "iron.pdf"
+        }
+        },
+        {
+        "internalCode" : "rm4",
+        "nameRawMaterial" : "cat2",
+        "description" : "steel",
+        "TechnicalSheet" : {
+         
+        "nameTechnicalSheet" : "steel.pdf"
+        }
+        }
+        ]},
+        "Products" : { "Product" :[
+        
+        {
+        "fabricationCode" : "product1",
+        "comercialCode" : "cc23321",
+        "briefDescription" : "Iron Pickaxe",
+        "completeDescription" : "Iron Pickaxe for Mining",
+        "productCategory" : "Tools",
+        "unity" : "UN",
+        "productionSheet" : "ps3221"}
+        ,
+        {
+        "fabricationCode" : "product4",
+        "comercialCode" : "cc23321",
+        "briefDescription" : "Iron Picaxe",
+        "completeDescription" : "Iron Picaxe for Mining",
+        "productCategory" : "Tools",
+        "unity" : "UN",
+        "productionSheet" : "ps3221"}
+        ,
+        {
+        "fabricationCode" : "product2",
+        "comercialCode" : "cc23321",
+        "briefDescription" : "Iron Pickaxe",
+        "completeDescription" : "Iron Pickaxe for Mining",
+        "productCategory" : "Tools",
+        "unity" : "UN",
+        "productionSheet" : "ps3221"}
+        ,
+        {
+        "fabricationCode" : "product3",
+        "comercialCode" : "cc23111",
+        "briefDescription" : "Coffee Maker",
+        "completeDescription" : "Ideal For making coffee",
+        "productCategory" : "Beverages",
+        "unity" : "UN",
+        "productionSheet" : "ps3222"}
+        
+        ]}
+        ,
+        "Deposits" : { "Deposit" :[
+        
+        {
+        "internalCode" : "d1",
+        "Description" : "d1",
+        
+            "productID1" : "d",
+            "PQuantity1" : "2"
+            }
+        ,
+        {
+        "internalCode" : "d2",
+        "Description" : "d2",
+        
+            "rawMaterialID1" : "rm2",
+            "RMQuantity1" : "2"
+            }
+        ,
+        {
+        "internalCode" : "d3",
+        "Description" : "d3",
+        
+            "rawMaterialID1" : "rm2",
+            "RMQuantity1" : "1"
+            ,
+            "productID1" : "d",
+            "PQuantity1" : "5"
+            }
+        
+        ]},
+        "Production Sheets" : { "Production Sheet" :[
+        
+        {
+        "productionSheetID" : "ps3221",
+        
+            "productID1" : "product1",
+            "PQuantity1" : "3",
+        
+            "rawMaterialID1" : "rm2",
+            "RQuantity1" : "5"
+            ,
+            "rawMaterialID2" : "rm4",
+            "RQuantity2" : "2"
+            }
+        ,
+        {
+        "productionSheetID" : "ps3222",
+        
+            "productID1" : "product1",
+            "PQuantity1" : "3",
+        
+            "rawMaterialID1" : "rm1",
+            "RQuantity1" : "5"
+            ,
+            "rawMaterialID2" : "rm3",
+            "RQuantity2" : "2"
+            }
+        
+        ]}
+        ,
+        "Lots" : { "Lot" :[
+        
+        {
+        "lotID" : "lot1"}
+        
+        ]}
+        ,
+        "Production Orders" : { "Production Order" :[
+        
+        {
+        "internalCode" : "po1",
+        "description" : "po1",
+        "state" : "Suspended",
+        "lot" : "lot1",
+        "request" : "req1",
+        "emissionDate" : "2022-10-10",
+        "predictedExecutionDate" : "2023-10-10",
+        "productionSheet" : "ps1",
+        "quantityToProduce" : "1"}
+        
+        ]}
+        ,
+        "Production Lines" : { "Production Line" :[
+        
+        {
+        "internalCode" : "pl1",
+        "description" : "pl1",
+        
+            "machineID1" : "m1"
+            ,
+            "machineID2" : "m2"
+            
+        }
+        
+        ]}
+        ,
+        "Machines" :[
+            {
+                "InternalCode" : "mach1",
+                "State" : "Disable",
+                "SerialNumber" : "A12031010230",
+                "Description" : "Máquina de engomar",
+                "InstallationDate" : "2008-11-15",
+                "Brand" : "Ford",
+                "Model" : "103",
+                "Protocol" : "100",
+                "Machine" : ""
+            },
+            {
+                "InternalCode" : "mach2",
+                "State" : "Active",
+                "SerialNumber" : "A12031010231",
+                "Description" : "Máquina de Parafusar",
+                "InstallationDate" : "2008-11-15",
+                "Brand" : "Ford",
+                "Model" : "105",
+                "Protocol" : "",
+                "Machine" : "mach1"
+            }
+        ],
+        "ConfigurationFiles" :[
+            {
+                "Machine" : "mach1",
+                "ConfigurationFiles" : [
+                        "config1"
+                ]
+            },
+            {
+                "Machine" : "mach2",
+                "ConfigurationFiles" : [
+                        "config10",
+                        "config11",
+                        "config12"
+                ]
+            }
+        ]
+            }
+        }
+    

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:element name="ShopFloor">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Wastes" type="TWastes" minOccurs="0" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:complexType name="TWastes">
+    <xsd:sequence>
+      <xsd:element name="Waste" type="TWaste" maxOccurs="unbounded" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="TWaste">
+    <xsd:sequence>
+      <xsd:element name="Machine" type="TMachine" />
+      <xsd:element name="Deposit" type="TDeposit" />
+      <xsd:element name="RawMaterial" type="TRawMaterial" minOccurs="0" />
+      <xsd:element name="Product" type="TProduct" minOccurs="0" />
+      <xsd:element name="ProductOrder" type="TProductOrder" />
+    </xsd:sequence>
+    <xsd:attribute name="quantity" type="xsd:int" />
+  </xsd:complexType>
+
+  <xsd:complexType name="TMachine">
+    <xsd:attribute name="InternalCode" type="xsd:IDREF" />
+  </xsd:complexType>
+
+  <xsd:complexType name="TDeposit">
+    <xsd:attribute name="id" type="xsd:IDREF" />
+  </xsd:complexType>
+
+  <xsd:complexType name="TRawMaterial">
+    <xsd:attribute name="id" type="xsd:IDREF" />
+  </xsd:complexType>
+
+  <xsd:complexType name="TProduct">
+    <xsd:attribute name="id" type="xsd:IDREF" />
+  </xsd:complexType>
+
+  <xsd:complexType name="TProductOrder">
+    <xsd:attribute name="id" type="xsd:IDREF" />
+  </xsd:complexType>
+
+</xsd:schema>

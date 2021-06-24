@@ -1,0 +1,264 @@
+
+        SSFM
+        
+
+
+        Raw Material Categories:
+        
+        Name: cat1
+        Description: Wood
+        
+        Name: cat2
+        Description: Metal
+
+
+        Raw Materials: 
+
+        Internal Code: rm1
+        Category: cat1
+        Description: softwood
+        Technical Sheet: softwood.pdf
+
+        Internal Code: rm2
+        Category: cat1
+        Description: softwood
+        Technical Sheet: softwood.pdf
+
+        Internal Code: rm3
+        Category: cat2
+        Description: iron
+        Technical Sheet: iron.pdf
+
+        Internal Code: rm4
+        Category: cat2
+        Description: steel
+        Technical Sheet: steel.pdf
+
+
+        Products: 
+
+        Fabrication Code: product1
+        Comercial Code: cc23321
+        Brief Description: Iron Pickaxe
+        Complete Description: Iron Pickaxe for Mining
+        Product Category: Tools
+        Unity: UN
+        Production Sheet: ps3221
+
+        Fabrication Code: product4
+        Comercial Code: cc23321
+        Brief Description: Iron Picaxe
+        Complete Description: Iron Picaxe for Mining
+        Product Category: Tools
+        Unity: UN
+        Production Sheet: ps3221
+
+        Fabrication Code: product2
+        Comercial Code: cc23321
+        Brief Description: Iron Pickaxe
+        Complete Description: Iron Pickaxe for Mining
+        Product Category: Tools
+        Unity: UN
+        Production Sheet: ps3221
+
+        Fabrication Code: product3
+        Comercial Code: cc23111
+        Brief Description: Coffee Maker
+        Complete Description: Ideal For making coffee
+        Product Category: Beverages
+        Unity: UN
+        Production Sheet: ps3222
+
+
+        Deposits: 
+
+        Internal Code: d1
+        Description: d1
+            Raw Materials:
+            Products:
+                - d (2)
+
+        Internal Code: d2
+        Description: d2
+            Raw Materials:
+                - rm2 (2)
+            Products:
+
+        Internal Code: d3
+        Description: d3
+            Raw Materials:
+                - rm2 (1)
+            Products:
+                - d (5)
+        
+
+        Production Sheet ID: ps3221
+            Product ID: product1
+            Quantity: 3
+            Raw Material: rm2
+            Quantity: 5
+            Raw Material: rm4
+            Quantity: 2
+        
+
+        Production Sheet ID: ps3222
+            Product ID: product1
+            Quantity: 3
+            Raw Material: rm1
+            Quantity: 5
+            Raw Material: rm3
+            Quantity: 2
+    
+
+
+        Lots: 
+
+        Internal Code: lot1
+
+
+        Production Orders: 
+
+        Internal Code: po1
+        Description: po1
+        State: Suspended
+        Lot: lot1
+        Request: req1
+        Emission Date: 2022-10-10
+        Predicted Execution Date: 2023-10-10
+        Production Sheet: ps1
+        Quantity To Produce: 1
+
+
+        Production Lines: 
+
+        Internal Code: pl1
+        Description: pl1
+            Machines:
+                - m1
+                - m2
+
+
+        Consumptions:
+        
+        Effective Consumptions:
+        
+        Machine: mach1
+        Deposit: d1
+        RawMaterial: rm1
+        Quantity: 20
+        
+        Machine: mach1
+        Deposit: d1
+        RawMaterial: rm2
+        Quantity: 20
+        
+        Machine: mach1
+        Deposit: d2
+        RawMaterial: product3
+        Quantity: 10
+        
+        Machine: mach1
+        Deposit: d2
+        RawMaterial: product2
+        Quantity: 20
+        
+        Machine: mach1
+        Deposit: 
+        RawMaterial: product4
+        Quantity: 20
+        
+        RealConsumptions:
+        
+        Deposit :d1
+        Quantity: 40
+        
+        Deposit :d2
+        Quantity: 30
+        
+        RawMaterial: rm1"
+        Quantity: 20"
+    
+        
+        RawMaterial: rm2"
+        Quantity: 20"
+    
+        
+        Product: product3"
+        Quantity: 10"
+    
+        
+        Product: product2"
+        Quantity: 20"
+    
+
+        Machines: 
+
+            Internal Code: mach1
+            State: Disable
+            Serial Number: A12031010230
+            Description: Máquina de engomar
+            Installation Date: 2008-11-15
+            Brand: Ford
+            Model: 103
+            Protocol: 100
+
+            Internal Code: mach2
+            State: Active
+            Serial Number: A12031010231
+            Description: Máquina de Parafusar
+            Installation Date: 2008-11-15
+            Brand: Ford
+            Model: 105
+            Followed by Machine: mach1
+
+        Configuration Files: 
+
+            Machine: mach1
+            Description: config1
+
+            Machine: mach2
+            Description: config10
+
+            Machine: mach2
+            Description: config11
+
+            Machine: mach2
+            Description: config12
+
+        Wastes:
+
+            Production Order: po1
+            Machine: mach1
+            Raw Material: rm2
+            Quantity: 3
+            Deposit: d2
+
+            Production Order: po1
+            Machine: mach2
+            Product: product1
+            Quantity: 30
+            Deposit: d2
+
+        Effective Times: 
+
+            Production Order: po1
+            Machine: mach1
+            Minutes: 5
+            Seconds: 3
+
+            Production Order: po1
+            Machine: mach2
+            Minutes: 10
+            Seconds: 0
+
+        Brute Times: 
+
+            Production Order: po1
+            Machine: mach1
+            Minutes: 5
+            Seconds: 3
+
+            Production Order: po1
+            Machine: mach2
+            Minutes: 15
+            Seconds: 36

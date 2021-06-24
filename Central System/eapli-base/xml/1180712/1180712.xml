@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<SSFM
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='1180712.xsd'>
+    <RawMaterialCategories>
+		<RawMaterialCategory name="cat1">
+			<description>Wood</description>
+		</RawMaterialCategory>
+		<RawMaterialCategory name="cat2">
+			<description>Metal</description>
+		</RawMaterialCategory>
+	</RawMaterialCategories>
+
+	<RawMaterials>
+		<RawMaterial internalCode="rm1" nameRawMaterialCategory="cat1">
+			<description>softwood</description>
+			<TechnicalSheet>
+				<nameTechnicalSheet>softwood.pdf</nameTechnicalSheet>
+			</TechnicalSheet>
+		</RawMaterial>
+		<RawMaterial internalCode="rm2" nameRawMaterialCategory="cat1">
+			<description>softwood</description>
+			<TechnicalSheet>
+				<nameTechnicalSheet>softwood.pdf</nameTechnicalSheet>
+			</TechnicalSheet>
+		</RawMaterial>
+		<RawMaterial internalCode="rm3" nameRawMaterialCategory="cat2">
+			<description>iron</description>
+			<TechnicalSheet>
+				<nameTechnicalSheet>iron.pdf</nameTechnicalSheet>
+			</TechnicalSheet>
+		</RawMaterial>
+		<RawMaterial internalCode="rm4" nameRawMaterialCategory="cat2">
+			<description>steel</description>
+			<TechnicalSheet>
+				<nameTechnicalSheet>steel.pdf</nameTechnicalSheet>
+			</TechnicalSheet>
+		</RawMaterial>
+	</RawMaterials>
+	
+    <Consumptions>
+		<EffectiveConsumptions>
+			<Consumption machine="m1" deposit="d1" rawMaterial="rm1">
+				<quantity>20</quantity>
+			</Consumption>
+			<Consumption machine="m2" deposit="d2" rawMaterial="rm2">
+				<quantity>20</quantity>
+			</Consumption>
+			<Consumption machine="m2" deposit="d2" product="product3">
+				<quantity>10</quantity>
+			</Consumption>
+			<Consumption machine="m2" deposit="d2" product="product2">
+				<quantity>20</quantity>
+			</Consumption>
+		</EffectiveConsumptions>
+		<RealConsumptions>
+			<Deposit id="d1">
+				<quantity>40</quantity>
+			</Deposit>
+			<Deposit id="d2">
+				<quantity>30</quantity>
+			</Deposit>
+			<RawMaterial id="rm1">
+				<quantity>20</quantity>
+			</RawMaterial>
+			<RawMaterial id="rm2">
+				<quantity>20</quantity>
+			</RawMaterial>
+			<Product id="product3">
+				<quantity>10</quantity>
+			</Product>
+			<Product id="product2">
+				<quantity>20</quantity>
+			</Product>
+		</RealConsumptions>
+	</Consumptions>
+
+</SSFM>

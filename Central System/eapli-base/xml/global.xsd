@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	
+    <xsd:element name="SSFM" type="TSSFM">
+        <!-- Raw Materials -->
+        <xsd:key name="RawMaterialCategoryKey">
+            <xsd:selector xpath="RawMaterialCategories/RawMaterialCategory"/>
+            <xsd:field xpath="@name"/>
+        </xsd:key>
+        <xsd:key name="RawMaterialKey">
+            <xsd:selector xpath="RawMaterials/RawMaterial"/>
+            <xsd:field xpath="@internalCode"/>   
+        </xsd:key>
+        <xsd:keyref name="RawMaterialRefKey" refer="RawMaterialCategoryKey">
+            <xsd:selector xpath="RawMaterials/RawMaterial"/>
+            <xsd:field xpath="@nameRawMaterialCategory"/>   
+        </xsd:keyref>
+               
+        <!-- EffectiveConsumptions -->
+        <xsd:keyref name="ConsumptionDepositRefKey" refer="DepositKey">
+            <xsd:selector xpath="Consumptions/EffectiveConsumptions/Consumption"/>
+            <xsd:field xpath="@deposit"/>   
+        </xsd:keyref>
+        <xsd:keyref name="ConsumptionMachineRefKey" refer="MachineKey">
+            <xsd:selector xpath="Consumptions/EffectiveConsumptions/Consumption"/>
+            <xsd:field xpath="@machine"/>   
+        </xsd:keyref>
+        <xsd:keyref name="ConsumptionProductRefKey" refer="ProductKey">
+            <xsd:selector xpath="Consumptions/EffectiveConsumptions/Consumption"/>
+            <xsd:field xpath="@product"/>   
+        </xsd:keyref>
+        <xsd:keyref name="ConsumptionRawMaterialRefKey" refer="RawMaterialKey">
+            <xsd:selector xpath="Consumptions/EffectiveConsumptions/Consumption"/>
+            <xsd:field xpath="@rawMaterial"/>   
+        </xsd:keyref>
+		
+        <!-- Real consumptions -->
+        <xsd:keyref name="RealConsumptionDepositRefKey" refer="DepositKey">
+            <xsd:selector xpath="Consumptions/RealConsumptions/Deposit" />
+            <xsd:field xpath="@id" />
+        </xsd:keyref>
+        <xsd:keyref name="RealConsumptionProductRefKey" refer="ProductKey">
+            <xsd:selector xpath="Consumptions/RealConsumptions/Product" />
+            <xsd:field xpath="@id" />
+        </xsd:keyref>
+        <xsd:keyref name="RealConsumptionRawMaterialRefKey" refer="RawMaterialKey">
+            <xsd:selector xpath="Consumptions/RealConsumptions/RawMaterial" />
+            <xsd:field xpath="@id" />
+        </xsd:keyref>
+        
+		<!-- Effective Times -->
+        <xsd:keyref name="EffectiveTimeMachineRefKey" refer="MachineKey">
+            <xsd:selector xpath="EffectiveTimes/EffectiveTime/Machine" />
+            <xsd:field xpath="@InternalCode" />
+        </xsd:keyref>
+        <xsd:keyref name="EffectiveTimeProductionOrderRefKey" refer="ProductionOrderKey">
+            <xsd:selector xpath="EffectiveTimes/EffectiveTime/ProductionOrder" />
+            <xsd:field xpath="@ID" />
+        </xsd:keyref>
+
+        <!-- Brute Times -->
+        <xsd:keyref name="BruteTimeMachineRefKey" refer="MachineKey">
+            <xsd:selector xpath="BruteTimes/BruteTime/Machine" />
+            <xsd:field xpath="@InternalCode" />
+        </xsd:keyref>
+        <xsd:keyref name="BruteTimeProductionOrderRefKey" refer="ProductionOrderKey">
+            <xsd:selector xpath="BruteTimes/BruteTime/ProductionOrder" />
+            <xsd:field xpath="@ID" />
+        </xsd:keyref>
+
+        <!-- Wastes -->
+        <xsd:keyref name="WastesProductionOrderRefKey" refer="ProductionOrderKey">
+            <xsd:selector xpath="Wastes/Waste/ProductionOrder" />
+            <xsd:field xpath="@ID" />
+        </xsd:keyref>
+        <xsd:keyref name="WastesDepositRefKey" refer="DepositKey">
+            <xsd:selector xpath="Wastes/Waste/Deposit" />
+            <xsd:field xpath="@ID" />
+        </xsd:keyref>
+        <xsd:keyref name="WastesRawMaterialRefKey" refer="RawMaterialKey">
+            <xsd:selector xpath="Wastes/Waste/RawMaterial" />
+            <xsd:field xpath="@ID" />
+        </xsd:keyref>
+        <xsd:keyref name="WastesProductRefKey" refer="ProductKey">
+            <xsd:selector xpath="Wastes/Waste/Product" />
+            <xsd:field xpath="@ID" />
+        </xsd:keyref>
+        <xsd:keyref name="WastesMachineRefKey" refer="MachineKey">
+            <xsd:selector xpath="Wastes/Waste/Machine" />
+            <xsd:field xpath="@InternalCode" />
+        </xsd:keyref>
+
+        <!-- Machines -->
+        <xsd:keyref name="MachineRefKey" refer="MachineKey">
+            <xsd:selector xpath="Machines/Machine/Machine" />
+            <xsd:field xpath="@InternalCode" />
+        </xsd:keyref>
+        <xsd:key name="MachineKey">
+            <xsd:selector xpath="Machines/Machine" />
+            <xsd:field xpath="@InternalCode" />
+        </xsd:key>
+        <xsd:key name="DepositKey">
+            <xsd:selector xpath="Deposits/Deposit" />
+            <xsd:field xpath="@internalCode" />
+        </xsd:key>
+        <xsd:keyref name="DepositRawMaterialKey" refer="RawMaterialKey">
+            <xsd:selector xpath="Deposits/Deposit/RawMaterials/RawMaterial" />
+            <xsd:field xpath="@ID" />
+        </xsd:keyref>
+        <xsd:keyref name="DepositProductKey" refer="ProductKey">
+            <xsd:selector xpath="Deposits/Deposit/Products/Product"/>
+            <xsd:field xpath="@idProduct"/>
+        </xsd:keyref>
+        <xsd:key name="ProductionOrderKey">
+            <xsd:selector xpath="ProductionOrders/ProductionOrder" />
+            <xsd:field xpath="@internalCode" />
+        </xsd:key>
+        <xsd:keyref name="ProductionOrderLotKey" refer="LotKey">
+            <xsd:selector xpath="ProductionOrders/ProductionOrder/Lot" />
+            <xsd:field xpath="@ID" />
+        </xsd:keyref>
+        <xsd:key name="ProductionLineKey">
+            <xsd:selector xpath="ProductionLines/ProductionLine" />
+            <xsd:field xpath="@internalCode" />
+        </xsd:key>
+        <xsd:key name="LotKey">
+            <xsd:selector xpath="Lots/Lot" />
+            <xsd:field xpath="@internalCode" />
+        </xsd:key>
+        <xsd:key name="ProductKey">
+            <xsd:selector xpath="Products/Product" />
+            <xsd:field xpath="@fabricationCode" />
+        </xsd:key>
+        <xsd:key name="ProductionSheetKey">
+            <xsd:selector xpath="ProductionSheets/ProductionSheet" />
+            <xsd:field xpath="@ID" />
+        </xsd:key>
+        <xsd:keyref name="ProductionSheetLineProductKey" refer="ProductKey">
+            <xsd:selector xpath="ProductionSheets/ProductionSheet/ProductionSheetLineProduct/Product" />
+            <xsd:field xpath="@ID" />
+        </xsd:keyref>
+        <xsd:keyref name="ProductionSheetLineRawMaterialKey" refer="RawMaterialKey">
+            <xsd:selector xpath="ProductionSheets/ProductionSheet/ProductionSheetLineRawMaterial/RawMaterial" />
+            <xsd:field xpath="@ID" />
+        </xsd:keyref>
+    </xsd:element>
+
+    <!-- General -->
+    <xsd:complexType name="TSSFM">
+        <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="RawMaterialCategories" type="TRawMaterialCategories"/>
+            <xsd:element name="RawMaterials" type="TRawMaterials"/>
+            <xsd:element name="Products" type="TProducts"/>
+            <xsd:element name="Deposits" type="TDeposits"/>
+            <xsd:element name="ProductionSheets" type="ProductionSheets"/>
+            <xsd:element name="Lots" type="TLots"/>
+            <xsd:element name="ProductionOrders" type="TProductionOrders"/>
+            <xsd:element name="ProductionLines" type="TProductionLines"/>
+            <xsd:element name="Consumptions" type="TConsumptions"/>
+            <xsd:element name="Wastes" type="TWastes"/>
+            <xsd:element name="Machines" type="TMachines"/>
+            <xsd:element name="EffectiveTimes" type="TEffectiveTimes"/>
+            <xsd:element name="BruteTimes" type="TBruteTimes"   />
+        </xsd:choice>
+    </xsd:complexType>
+
+    <xsd:simpleType name="TInternalCode">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="15" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TQuantity">
+        <xsd:restriction base="xsd:int">
+            <xsd:minExclusive value="0" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Raw Material Categories -->
+    <xsd:complexType name="TRawMaterialCategories">
+        <xsd:sequence>
+            <xsd:element name="RawMaterialCategory" type="TRawMaterialCategory" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="TRawMaterialCategory">
+        <xsd:sequence>
+            <xsd:element name="description" type="xsd:string" />
+        </xsd:sequence>
+        <xsd:attribute name="name" type="TRawMaterialCategoryName" use="required" />
+    </xsd:complexType>
+
+    <xsd:simpleType name="TRawMaterialCategoryName">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Raw Materials -->
+    <xsd:complexType name="TRawMaterials">
+        <xsd:sequence>
+            <xsd:element name="RawMaterial" type="TRawMaterial" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="TRawMaterial">
+        <xsd:sequence>
+            <xsd:element name="description" type="xsd:string" />
+            <xsd:element name="TechnicalSheet" type="TTechnicalSheet" />
+        </xsd:sequence>
+        <xsd:attribute name="internalCode" type="TInternalCode" use="required" />
+        <xsd:attribute name="nameRawMaterialCategory" type="TRawMaterialCategoryName" use="required" />
+    </xsd:complexType>
+
+    <xsd:complexType name="TTechnicalSheet">
+        <xsd:sequence>
+            <xsd:element name="nameTechnicalSheet" type="xsd:string" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Comsumption -->
+    <xsd:complexType name="TConsumptions">
+        <xsd:sequence>
+            <xsd:element name="EffectiveConsumptions" type="TEffectiveConsumptions" />
+            <xsd:element name="RealConsumptions" type="TRealConsumptions" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="TEffectiveConsumptions">
+        <xsd:sequence>
+            <xsd:element name="Consumption" type="TEffectiveConsumption" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="TEffectiveConsumption">
+        <xsd:sequence>
+            <xsd:element name="quantity" type="TQuantity" />
+        </xsd:sequence>
+        <xsd:attribute name="machine" type="xsd:string" use="required" />
+        <xsd:attribute name="product" type="TInternalCode" use="optional" />
+        <xsd:attribute name="rawMaterial" type="TInternalCode" use="optional" />
+        <xsd:attribute name="deposit" type="TInternalCode" use="optional" />
+    </xsd:complexType>
+
+    <xsd:complexType name="TRealConsumptions">
+        <xsd:sequence>
+            <xsd:element name="Deposit" type="TDepositConsumption" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="RawMaterial" type="TRawMaterialConsumption" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="Product" type="TProductConsumption" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="TDepositConsumption">
+        <xsd:sequence>
+            <xsd:element name="quantity" type="TQuantity" />
+        </xsd:sequence>
+        <xsd:attribute name="id" type="xsd:string" use="required" />
+    </xsd:complexType>
+
+    <xsd:complexType name="TProductConsumption">
+        <xsd:sequence>
+            <xsd:element name="quantity" type="TQuantity" />
+        </xsd:sequence>
+        <xsd:attribute name="id" type="xsd:string" use="required" />
+    </xsd:complexType>
+
+    <xsd:complexType name="TRawMaterialConsumption">
+        <xsd:sequence>
+            <xsd:element name="quantity" type="TQuantity" />
+        </xsd:sequence>
+        <xsd:attribute name="id" type="xsd:string" use="required" />
+    </xsd:complexType>
+
+    <!-- Deposits -->
+    <xsd:complexType name="TDeposits">
+        <xsd:sequence>
+            <xsd:element name="Deposit" type="TDeposit" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="TDeposit">
+        <xsd:sequence>
+            <xsd:element name="Description" type="xsd:string" />
+            <xsd:element name="RawMaterials" type="TDepositRawMaterials" minOccurs="0" />
+            <xsd:element name="Products" type="TDepositsProducts" minOccurs="0"/>
+        </xsd:sequence>
+        <xsd:attribute name="internalCode" type="TInternalCode" use="required" />
+    </xsd:complexType>
+
+    <xsd:complexType name="TDepositRawMaterials">
+        <xsd:sequence>
+            <xsd:element name="RawMaterial" type="DepositObjectT" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="TDepositsProducts">
+        <xsd:sequence>
+            <xsd:element name="Product" type="DepositObjectT" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="DepositObjectT">
+        <xsd:attribute name="ID" type="TInternalCode" />
+        <xsd:attribute name="Quantity" type="xsd:integer" />
+    </xsd:complexType>
+
+    <!-- Production Lines -->
+    <xsd:complexType name="TProductionLines">
+        <xsd:sequence>
+            <xsd:element name="ProductionLine" type="TProductionLine" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="TProductionLine">
+        <xsd:sequence>
+            <xsd:element name="Description" type="xsd:string" />
+            <xsd:element name="Machines" type="MachinesT" minOccurs="0"/>
+        </xsd:sequence>
+        <xsd:attribute name="internalCode" type="TInternalCode" use="required" />
+    </xsd:complexType>
+
+    <xsd:complexType name="MachinesT">
+        <xsd:sequence>
+            <xsd:element name="Machine" type="MachineT" minOccurs="2" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="MachineT">
+        <xsd:attribute name="ID" type="TInternalCode" />
+    </xsd:complexType>
+
+    <!-- Production Orders-->
+    <xsd:complexType name="TProductionOrders">
+        <xsd:sequence>
+            <xsd:element name="ProductionOrder" type="ProductionOrderType" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="ProductionOrderType">
+        <xsd:sequence>
+            <xsd:element name="Description" type="xsd:string" />
+            <xsd:element name="State" type="StateT" />
+            <xsd:element name="Lot" type="LotT" maxOccurs="unbounded" />
+            <xsd:element name="Request" type="RequestT" minOccurs="0" />
+            <xsd:element name="EmissionDate" type="xsd:date" />
+            <xsd:element name="PredictedExecutionDate" type="xsd:date" />
+            <xsd:element name="ProductionSheet" type="ProductionSheetT" />
+            <xsd:element name="QuantityToProduce" type="TQuantityToProduce" />
+        </xsd:sequence>
+        <xsd:attribute name="internalCode" type="TInternalCode" use="required" />
+    </xsd:complexType>
+
+    <xsd:simpleType name="StateT">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Suspended" />
+            <xsd:enumeration value="Pending" />
+            <xsd:enumeration value="Executing" />
+            <xsd:enumeration value="Execution halted temporarily" />
+            <xsd:enumeration value="Finished" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="LotT">
+        <xsd:attribute name="ID" type="TInternalCode" />
+    </xsd:complexType>
+
+    <xsd:complexType name="RequestT">
+        <xsd:attribute name="ID" type="TInternalCode" />
+    </xsd:complexType>
+
+    <xsd:complexType name="ProductionSheetT">
+        <xsd:attribute name="ID" type="TInternalCode" />
+    </xsd:complexType>
+
+    <xsd:simpleType name="TQuantityToProduce">
+        <xsd:restriction base="xsd:int">
+            <xsd:minExclusive value="0" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Lots -->
+    <xsd:complexType name="TLots">
+        <xsd:sequence>
+            <xsd:element name="Lot" type="TLot" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="TLot">
+        <xsd:attribute name="internalCode" type="TInternalCode" use="required" />
+    </xsd:complexType>
+
+    <!-- Products -->
+    <xsd:complexType name="TProducts">
+        <xsd:sequence>
+            <xsd:element name="Product" type="TpProduct" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="TpProduct">
+        <xsd:sequence>
+            <xsd:element name="comercialCode" type="TInternalCode" />
+            <xsd:element name="briefDescription" type="xsd:string" />
+            <xsd:element name="completeDescription" type="xsd:string" />
+            <xsd:element name="productCategory" type="xsd:string" />
+            <xsd:element name="unity" type="xsd:string" />
+            <xsd:element name="productionSheet" type="TInternalCode" minOccurs="0" />
+        </xsd:sequence>
+        <xsd:attribute name="fabricationCode" type="TInternalCode" use="required" />
+    </xsd:complexType>
+
+    <!-- Production Sheets -->
+    <xsd:complexType name="ProductionSheets">
+        <xsd:sequence>
+            <xsd:element name="ProductionSheet" type="ProductionSheetType" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="ProductionSheetType">
+        <xsd:sequence>
+            <xsd:element name="ProductionSheetLineProduct" type="ProductionSheetLineProduct" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="ProductionSheetLineRawMaterial" type="ProductionSheetLineRawMaterial" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="ID" type="TInternalCode" use="required" />
+    </xsd:complexType>
+
+    <xsd:complexType name="ProductionSheetLineProduct">
+        <xsd:sequence>
+            <xsd:element name="Product" type="ProductionSheetLineObjectType" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="ProductionSheetLineRawMaterial">
+        <xsd:sequence>
+            <xsd:element name="RawMaterial" type="ProductionSheetLineObjectType" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="ProductionSheetLineObjectType">
+        <xsd:attribute name="ID" type="TInternalCode" />
+        <xsd:attribute name="Quantity" type="xsd:integer" />
+    </xsd:complexType>
+
+    <xsd:complexType name="productionSheetIDType">
+        <xsd:attribute name="ID" type="TInternalCode" />
+    </xsd:complexType>
+
+    <xsd:complexType name="TMachine">
+        <xsd:sequence>
+            <xsd:element name="SerialNumber" type="TSerialNumber" />
+            <xsd:element name="Description" type="TDescription" />
+            <xsd:element name="InstallationDate" type="TDate" />
+            <xsd:element name="Brand" type="TBrand" />
+            <xsd:element name="Model" type="TModel" />
+            <xsd:element name="Protocol" type="TProtocol" minOccurs="0" />
+            <xsd:element name="Machine" type="TMachineID" minOccurs="0" />
+            <xsd:element name="ConfigurationFiles" type="TConfigurationFiles" minOccurs="0" />
+        </xsd:sequence>
+        <xsd:attribute name="InternalCode" type="TInternalCode" use="required" />
+        <xsd:attribute name="State" type="TMachineState" use="required" />
+    </xsd:complexType>
+
+    <xsd:complexType name="TMachineID">
+        <xsd:attribute name="InternalCode" type="xsd:string" use="required" />
+    </xsd:complexType>
+
+    <xsd:simpleType name="TSerialNumber">
+        <xsd:restriction base="xsd:string" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TDescription">
+        <xsd:restriction base="xsd:string" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TDate">
+        <xsd:restriction base="xsd:date" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TModel">
+        <xsd:restriction base="xsd:string" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TBrand">
+        <xsd:restriction base="xsd:string" />
+    </xsd:simpleType>
+
+    <xsd:complexType name="TProtocol">
+        <xsd:attribute name="ID" type="TProtocolID" use="required" />
+    </xsd:complexType>
+
+    <xsd:simpleType name="TProtocolID">
+        <xsd:restriction base="xsd:integer">
+            <xsd:maxInclusive value="65535" />
+            <xsd:minInclusive value="1" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="TConfigurationFiles">
+        <xsd:sequence>
+            <xsd:element name="ConfigurationFile" type="TConfigurationFile" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="TConfigurationFile">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute name="File" type="TFile" />
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:simpleType name="TFile">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="(/|.)*/?.*\..*" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TMachineState">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Active" />
+            <xsd:enumeration value="Disable" />
+            <xsd:enumeration value="standby" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="TWastes">
+        <xsd:sequence>
+            <xsd:element name="Waste" minOccurs="0" maxOccurs="unbounded" type="TWaste" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="TMachines">
+        <xsd:sequence>
+            <xsd:element name="Machine" maxOccurs="unbounded" type="TMachine" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="TEffectiveTimes">
+        <xsd:sequence>
+            <xsd:element name="EffectiveTime" minOccurs="0" maxOccurs="unbounded" type="TEffectiveTime" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="TBruteTimes">
+        <xsd:sequence>
+            <xsd:element name="BruteTime" minOccurs="0" maxOccurs="unbounded" type="TBruteTime" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="TWaste">
+        <xsd:sequence>
+            <xsd:element name="Machine" type="TMachineID" />
+            <xsd:element name="Deposit" type="TDepositID" />
+            <xsd:element name="RawMaterial" type="TRawMaterialID" minOccurs="0" />
+            <xsd:element name="Product" type="TProductID" minOccurs="0" />
+            <xsd:element name="ProductionOrder" type="TProductionOrderID" />
+        </xsd:sequence>
+        <xsd:attribute name="quantity" type="xsd:int" use="required" />
+    </xsd:complexType>
+
+    <xsd:complexType name="TDepositID">
+        <xsd:attribute name="ID" type="xsd:string" use="required"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="TProductionOrderID">
+        <xsd:attribute name="ID" type="xsd:string" use="required"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="TRawMaterialID">
+        <xsd:attribute name="ID" type="xsd:string" use="required"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="TProductID">
+        <xsd:attribute name="ID" type="xsd:string" use="required"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="TEffectiveTime">
+        <xsd:sequence>
+            <xsd:element name="Machine" type="TMachineID" />
+            <xsd:element name="ProductionOrder" type="TProductionOrderID" />
+        </xsd:sequence>
+        <xsd:attribute name="Minutes" type="xsd:int" use="required" />
+        <xsd:attribute name="Seconds" type="xsd:int" use="required" />
+    </xsd:complexType>
+
+    <xsd:complexType name="TBruteTime">
+        <xsd:sequence>
+            <xsd:element name="Machine" type="TMachineID" />
+            <xsd:element name="ProductionOrder" type="TProductionOrderID" />
+        </xsd:sequence>
+        <xsd:attribute name="Minutes" type="xsd:int" use="required" />
+        <xsd:attribute name="Seconds" type="xsd:int" use="required" />
+    </xsd:complexType>
+
+</xsd:schema>

@@ -1,0 +1,6 @@
+<LotCatalogue>
+  <!--1 or more repetitions:-->
+  <Lot internalCode="lot1">
+    <Description>lot1</Description>
+  </Lot>
+</LotCatalogue>
