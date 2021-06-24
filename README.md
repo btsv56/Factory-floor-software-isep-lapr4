@@ -1,4 +1,4 @@
 EAPLI 2020
 =========
 
-[wiki](wiki/home.md)
+[Documentation](documentation/home.md)
